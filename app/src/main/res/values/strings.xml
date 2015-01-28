@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FHB</string>
+    <string name="action_calendar">Plan</string>
+    <string name="action_mensa">Mensa</string>
+    <string name="hello_world">Wellcome!</string>
+    <string name="preference_key">preference_key</string>
+    <string name="day">day</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="textview">TextView</string>
+    <string name="event_detail_announcement">Persönlicher QR-Code</string>
+    <string name="qr_code_of_uuid">QR Code of UUID</string>
+    <string name="events_heading">Aktuelle Events</string>
+    <string name="event_detail_activity_title">Event Detail</string>
+    <string name="event_detail_description">Description</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+
+</resources>

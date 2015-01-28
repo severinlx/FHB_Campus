@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-973147b5a6a7dd8368ab81d1c5a22d6813914a35.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2001db51c131e555bafdb77fc52af6a9408c505e">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-781a8c68a4f3e3fddf0a1d194fe4487b5fb3c4ce.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-d1f1d75564b4c13a6176605be10b0353fa2c26c8.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5-sources.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="769f3cca4ce92088288be3d0238ef96ef787e82f">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-sources-479952fc0b7fcbea2a1e187071a8101db5f8566a.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jsoup-1.7.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ab1f22cadc2f8b514e55ba368f5128056fe304da">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jsoup-1.7.3-0bb3187b2235df284456f1c6d74364f630a3558c.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/adt-bundle-linux-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-21057b15f8b1800a646347244ea9a6ca2f286368.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-37236be3b8d80b5047ebdfa3a98b163db1618151.jar" />
+    </item>
+
+</items>
