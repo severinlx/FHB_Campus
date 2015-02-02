@@ -1,40 +1,34 @@
 package org.alex.stundenplan.mensa;
 
-import org.alex.stundenplan.DrawerActivity;
-import org.alex.stundenplan.Login;
-import org.alex.stundenplan.Plan;
-import org.alex.stundenplan.R;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.alex.stundenplan.DrawerActivity;
+import org.alex.stundenplan.R;
+
 public class MensaActivity extends DrawerActivity {
-	 ListView listView ;
-	 mensaAdapter adapter;
+    protected TextView errortext;
+    ListView listView;
+    mensaAdapter adapter;
      boolean isCache;
      String day;
-     protected TextView errortext;
+
     protected void onPause(){
         super.onPause();
-
+/*
         if(adapter!=null){
             adapter.notifyDataSetChanged();
             adapter=null;
-        }
+        }*/
     }
     protected void onResume(){
         super.onResume();
-        if(adapter!=null){
+        /*if(adapter!=null){
             adapter.notifyDataSetChanged();
             adapter=null;
         }
-        setMeals();
+        setMeals();*/
     }
     protected void onStop(){
         super.onStop();

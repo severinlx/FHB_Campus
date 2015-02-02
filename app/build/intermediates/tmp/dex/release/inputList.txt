@@ -1,8 +1,0 @@
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/classes/release
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/support-annotations-20.0.0-21057b15f8b1800a646347244ea9a6ca2f286368.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/internal_impl-20.0.0-37236be3b8d80b5047ebdfa3a98b163db1618151.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/jsoup-1.7.3-0bb3187b2235df284456f1c6d74364f630a3558c.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/jdom-2.0.5-781a8c68a4f3e3fddf0a1d194fe4487b5fb3c4ce.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/classes-973147b5a6a7dd8368ab81d1c5a22d6813914a35.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/classes-d1f1d75564b4c13a6176605be10b0353fa2c26c8.jar
-/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/release/jdom-2.0.5-sources-479952fc0b7fcbea2a1e187071a8101db5f8566a.jar
