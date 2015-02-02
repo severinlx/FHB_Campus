@@ -1436,28 +1436,30 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030014;
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
-        public static final int activity_event_detail=0x7f030017;
-        public static final int activity_events=0x7f030018;
-        public static final int activity_main=0x7f030019;
-        public static final int drawer=0x7f03001a;
-        public static final int drawer_list_item=0x7f03001b;
-        public static final int footer=0x7f03001c;
-        public static final int fragment_planet=0x7f03001d;
-        public static final int home=0x7f03001e;
-        public static final int listitem=0x7f03001f;
-        public static final int listview=0x7f030020;
-        public static final int mensa_activity=0x7f030021;
-        public static final int mensa_item=0x7f030022;
-        public static final int navigation_drawer_base_layout=0x7f030023;
-        public static final int preferences=0x7f030024;
-        public static final int settings=0x7f030025;
-        public static final int start=0x7f030026;
-        public static final int support_simple_spinner_dropdown_item=0x7f030027;
-        public static final int wellcome=0x7f030028;
+        public static final int activity_backend__connect=0x7f030017;
+        public static final int activity_event_detail=0x7f030018;
+        public static final int activity_events=0x7f030019;
+        public static final int activity_main=0x7f03001a;
+        public static final int drawer=0x7f03001b;
+        public static final int drawer_list_item=0x7f03001c;
+        public static final int footer=0x7f03001d;
+        public static final int fragment_planet=0x7f03001e;
+        public static final int home=0x7f03001f;
+        public static final int listitem=0x7f030020;
+        public static final int listview=0x7f030021;
+        public static final int mensa_activity=0x7f030022;
+        public static final int mensa_item=0x7f030023;
+        public static final int navigation_drawer_base_layout=0x7f030024;
+        public static final int preferences=0x7f030025;
+        public static final int settings=0x7f030026;
+        public static final int start=0x7f030027;
+        public static final int support_simple_spinner_dropdown_item=0x7f030028;
+        public static final int wellcome=0x7f030029;
     }
     public static final class menu {
         public static final int list_view_with_simple_adapter=0x7f0d0000;
         public static final int menu=0x7f0d0001;
+        public static final int menu_backend__connect=0x7f0d0002;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;
@@ -1493,6 +1495,7 @@ containing a value of this type.
         public static final int preference_key=0x7f0b001e;
         public static final int qr_code_of_uuid=0x7f0b001f;
         public static final int textview=0x7f0b0020;
+        public static final int title_activity_backend__connect=0x7f0b0021;
     }
     public static final class style {
         /** 

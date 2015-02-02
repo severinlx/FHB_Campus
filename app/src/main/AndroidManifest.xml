@@ -25,11 +25,8 @@
             android:name=".wellcome"
             android:configChanges="orientation"
             android:noHistory="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".Home"
@@ -56,12 +53,22 @@
             android:configChanges="orientation"
             android:noHistory="true" >
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity
             android:name=".mensa.MensaActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
         </activity>
+        <activity
+            android:name=".backendConnection.Backend_Connect"
+            android:label="@string/title_activity_backend__connect">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

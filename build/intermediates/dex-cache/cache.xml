@@ -1,54 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2">
 
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-973147b5a6a7dd8368ab81d1c5a22d6813914a35.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.19.0/ba2aafb867f6af469f936ae76426cf0a280094bd/google-api-client-android-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="ba2aafb867f6af469f936ae76426cf0a280094bd">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-api-client-android-1.19.0-b37329192b216df09118221a1a3c021e507e5b73.jar" />
     </item>
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2001db51c131e555bafdb77fc52af6a9408c505e">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-781a8c68a4f3e3fddf0a1d194fe4487b5fb3c4ce.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="false" revision="21.1.2" sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jsr305-1.3.9-81b39415650e04d53ce66abf77f240d5e3f23cfe.jar" />
     </item>
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-d1f1d75564b4c13a6176605be10b0353fa2c26c8.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="false" revision="21.1.2" sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jackson-core-2.1.3-75164b49fa8f61d3d4cf1175d6755454c3f8489e.jar" />
     </item>
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5-sources.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="769f3cca4ce92088288be3d0238ef96ef787e82f">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-sources-479952fc0b7fcbea2a1e187071a8101db5f8566a.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.19.0/cdca49ad0977c040f603478aa2e16b2775c8fec6/google-http-client-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="cdca49ad0977c040f603478aa2e16b2775c8fec6">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-http-client-1.19.0-5aa20ebc948b373ed9eee2fc9670fdd74cd89fca.jar" />
     </item>
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jsoup-1.7.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ab1f22cadc2f8b514e55ba368f5128056fe304da">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jsoup-1.7.3-0bb3187b2235df284456f1c6d74364f630a3558c.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.19.0/e3f11020c2c812112803d252d1392872d3f619c8/google-http-client-android-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="e3f11020c2c812112803d252d1392872d3f619c8">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-http-client-android-1.19.0-738b329b787a5775e5633cde1b5872b4766b720d.jar" />
     </item>
     <item
-        jar="/home/alexandru/adt-bundle-linux-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-21057b15f8b1800a646347244ea9a6ca2f286368.jar" />
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/13.0/381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7/guava-jdk5-13.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/guava-jdk5-13.0-520d49af28144ca2da873342209748a5a82c770d.jar" />
     </item>
     <item
-        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-37236be3b8d80b5047ebdfa3a98b163db1618151.jar" />
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false" revision="21.1.2" sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-4985af6fef04c984b15d456b2eb6cff5df33d3ab.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/backend/build/libs/backend-android-endpoints.jar"
+        jumboMode="false" revision="21.1.2" sha1="afbb28cd7e30dd36a674d2b1fe0801d485f36b63">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/backend-android-endpoints-1612238cd317ff6e5624ae8cbfaf548caf04859f.jar" />
+    </item>
+    <item jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5.jar"
+        jumboMode="false" revision="21.1.2" sha1="2001db51c131e555bafdb77fc52af6a9408c505e">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-781a8c68a4f3e3fddf0a1d194fe4487b5fb3c4ce.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/adt-bundle-linux-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false" revision="21.1.2" sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-626f86b24cf9e7e9f2bf521dddf0452f01557416.jar" />
+    </item>
+    <item jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jdom-2.0.5-sources.jar"
+        jumboMode="false" revision="21.1.2" sha1="769f3cca4ce92088288be3d0238ef96ef787e82f">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jdom-2.0.5-sources-479952fc0b7fcbea2a1e187071a8101db5f8566a.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.19.0/6a21277d9bebe267b7ddee028b241eebc756c040/google-api-client-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="6a21277d9bebe267b7ddee028b241eebc756c040">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-api-client-1.19.0-9478bcbfc91019b5e5ee2183001eba6f6679406c.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.19.0/d473a8962e14a707a3716637e4898bb2dd9643f2/google-oauth-client-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="d473a8962e14a707a3716637e4898bb2dd9643f2">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-oauth-client-1.19.0-6726bd43803a62f7ce1b356cf5f39e5c01bc8d2a.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.19.0/81dbf9795d387d5e80e55346582d5f2fb81a42eb/google-http-client-jackson2-1.19.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="81dbf9795d387d5e80e55346582d5f2fb81a42eb">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/google-http-client-jackson2-1.19.0-2fe6d71d8780dfc7d76af3111c68452435864e96.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-2953d9053d133fe08a5184bcb0de4161bc4f478c.jar" />
+    </item>
+    <item jar="/home/alexandru/AndroidstudioProjects/Ibran/app/libs/jsoup-1.7.3.jar"
+        jumboMode="false" revision="21.1.2" sha1="ab1f22cadc2f8b514e55ba368f5128056fe304da">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/jsoup-1.7.3-0bb3187b2235df284456f1c6d74364f630a3558c.jar" />
+    </item>
+    <item
+        jar="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex
+            dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/classes-00314c4a7676b1ef3a5618501fd581c389c00221.jar" />
     </item>
 
 </items>
