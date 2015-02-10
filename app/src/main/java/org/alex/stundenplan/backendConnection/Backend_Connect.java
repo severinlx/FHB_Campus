@@ -27,6 +27,7 @@ public class Backend_Connect extends Activity {
         //-------------------------backend:--------------------------------------
         new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Francesco"));
         //checkBackend();
+
     }
 
     //----------------------------------------------------------------------------

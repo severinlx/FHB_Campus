@@ -24,4 +24,5 @@ dependencies {
     compile files('libs/jsoup-1.7.3.jar')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(path: ':backend', configuration: 'android-endpoints')
+    compile files('libs/objectify-insight-1.0.3.jar')
 }

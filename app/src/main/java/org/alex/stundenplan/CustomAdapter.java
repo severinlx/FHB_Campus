@@ -1,9 +1,5 @@
 package org.alex.stundenplan;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import StundenPlanOnlineParser.simpleParser;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+import StundenPlanOnlineParser.simpleParser;
+
+
+
 //Adapter==============================Adapter=====================================
+//@a Class to set Adapter with List of Subject and indicating view for diferent components of a subject. The subject list is retrieved in Constructor from parse class
 public class CustomAdapter extends BaseAdapter {
 	List<Subject> subjectList = new ArrayList();
 	// protected Plan plan;
@@ -32,8 +37,7 @@ public class CustomAdapter extends BaseAdapter {
 		}
 	}
 
-	// --------------------------------------Adapter Get
-	// View--------------------------------
+	// --------------------------------------Adapter Get View--------------------------------
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 		if (arg1 == null) {
 			LayoutInflater inflater = (LayoutInflater) context
@@ -63,8 +67,9 @@ public class CustomAdapter extends BaseAdapter {
 		return arg1;
 	}
 
-	// -----------------------------------get and
-	// Set-----------------------------
+    //___________________________________________________________________________________________
+
+	// ----------------------------------------get and Set-----------------------------
 	public List<Subject> getSubjectList() {
 		return subjectList;
 	}

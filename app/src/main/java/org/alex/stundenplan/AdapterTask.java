@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.ListView;
 
+// a Task to initialize Adapter, giving the Fach, Sem, Group from Prefferencess. Its a simple class doing just adapter initialise in Backgroud. Data for adapter are retrieved in Adapter Class..
 public class AdapterTask extends AsyncTask<Object, Void, Void> {
     Context context;
     ListView listView;
