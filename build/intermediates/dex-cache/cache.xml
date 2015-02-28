@@ -110,7 +110,7 @@
         jar="/home/alexandru/AndroidstudioProjects/Ibran/backend/build/libs/backend-android-endpoints.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="83a786085ee036664b189629c009368811f6d01e">
+        sha1="e56a65c1b340f5dfef67f56520269228935c585c">
         <dex dex="/home/alexandru/AndroidstudioProjects/Ibran/app/build/intermediates/pre-dexed/debug/backend-android-endpoints-1612238cd317ff6e5624ae8cbfaf548caf04859f.jar" />
     </item>
     <item
