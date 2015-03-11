@@ -7,34 +7,69 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+
+import org.alex.stundenplan.backend.parserEndpoint.ParserEndpoint;
+import org.alex.stundenplan.backend.parserEndpoint.model.ESubject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-
-import StundenPlanOnlineParser.simpleParser;
 
 
 
 //Adapter==============================Adapter=====================================
 //@a Class to set Adapter with List of Subject and indicating view for diferent components of a subject. The subject list is retrieved in Constructor from parse class
 public class CustomAdapter extends BaseAdapter {
-	List<Subject> subjectList = new ArrayList();
-	// protected Plan plan;
+
 	protected String fileName;
 	protected Context context;
-
+    private static ParserEndpoint parser=null;
+    String url="Stundenplan/ws1415/plan/acs-3.html";
+    List<ESubject> subjectList = new ArrayList<>();
 	// -------------------------------Constructor----------------------------------;
 	public CustomAdapter(Context context, Integer[] preferences)
 			throws Exception {
+
 		super();
 		this.context = context;
 		// get list in Background:
-		try {
-			subjectList = simpleParser.getList(context, preferences);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        if(parser == null) { // Only do this once
+            ParserEndpoint.Builder builder = new ParserEndpoint.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+                    .setRootUrl("https://fhb-backend.appspot.com/_ah/api/");
+
+            // options for running against local devappserver
+            // - 10.0.2.2 is localhost's IP address in Android emulator
+            // - turn off compression when running against local devappserver
+            // .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+            // .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+            //@Override
+            // public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+            //      abstractGoogleClientRequest.setDisableGZipContent(true);
+            // }
+            //  });
+
+            // end options for devappserver
+            builder.setApplicationName("FHB");
+            parser  = builder.build();
+        }
+
+        //----------------------main method:--------------------------------
+
+        try {
+
+            subjectList = parser.getList(url).execute().getItems();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+            //todo remember old version of becoming list
+			//subjectList = simpleParser.getList(context, preferences);
+
 	}
 
 	// --------------------------------------Adapter Get View--------------------------------
@@ -45,7 +80,7 @@ public class CustomAdapter extends BaseAdapter {
 			arg1 = inflater.inflate(R.layout.listitem, arg2, false);
 		}
 		// get Subject from list:
-		Subject subjItem = subjectList.get(arg0);
+		ESubject subjItem = subjectList.get(arg0);
 		// TextViews set layout:
 		TextView dayView = (TextView) arg1.findViewById(R.id.day);
 		TextView timeView = (TextView) arg1.findViewById(R.id.time);
@@ -53,37 +88,34 @@ public class CustomAdapter extends BaseAdapter {
 		TextView roomView = (TextView) arg1.findViewById(R.id.room);
 
 		// show day only in front of 1 lesson
-		if (subjItem.firstLesson == true) {
-			dayView.setText(subjItem.day);
+		if (true == true) {
+			dayView.setText(subjItem.getDay());
 			dayView.setVisibility(View.VISIBLE);
 		} else {
 			dayView.setText("");
 			dayView.setVisibility(View.GONE);
 		}
 		// show time, subj and room:
-		timeView.setText(subjItem.time);
-		subjView.setText(subjItem.subj);
-		roomView.setText(subjItem.room);
+		timeView.setText(subjItem.getTime());
+		subjView.setText(subjItem.getSubj());
+		roomView.setText(subjItem.getRoom());
 		return arg1;
 	}
 
     //___________________________________________________________________________________________
 
 	// ----------------------------------------get and Set-----------------------------
-	public List<Subject> getSubjectList() {
+	public List<ESubject> getSubjectList() {
 		return subjectList;
 	}
 
-	public void setSubjectList(List<Subject> List) {
-		// this.subjectList.clear();
-		subjectList = List;
-	}
+
 
 	public int getCount() {
 		return subjectList.size();
 	}
 
-	public Subject getItem(int arg0) {
+	public ESubject getItem(int arg0) {
 		return subjectList.get(arg0);
 	}
 
@@ -91,7 +123,7 @@ public class CustomAdapter extends BaseAdapter {
 		return arg0;
 	}
 
-	public Subject getCodeLearnsubjItem(int position) {
+	public ESubject getCodeLearnsubjItem(int position) {
 		return subjectList.get(position);
 	}
 

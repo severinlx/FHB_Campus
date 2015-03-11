@@ -1,4 +1,6 @@
 package org.alex.stundenplan;
+
+import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,7 +14,7 @@ import android.widget.Toast;
  * @author Alex Severin
  * 
  */
-public class Plan extends DrawerActivity {
+public class Plan extends Activity {
 
     static CustomAdapter customAdapter;
     private static Context context;
@@ -21,13 +23,13 @@ public class Plan extends DrawerActivity {
     //================================onCreate====================================
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = Plan.this;
+        context = this;
         //--------------------Activity view----------------------------------
         //Adding our layout to parent class frame layout.
-        getLayoutInflater().inflate(R.layout.listview, frameLayout);
+        //getLayoutInflater().inflate(R.layout.listview, frameLayout);
         //Setting title and itemChecked
-        mDrawerList.setItemChecked(position, true);
-        setTitle(listArray[position]);
+       // mDrawerList.setItemChecked(position, true);
+       // setTitle(listArray[position]);
         //setContentView(R.layout.listview);
 		//-------------------------adapter:--------------------------------------
 		listView = (ListView)findViewById(R.id.listView1);
