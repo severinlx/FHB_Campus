@@ -1,13 +1,17 @@
 package org.alex.stundenplan.backend;
 
+import com.googlecode.objectify.annotation.Entity;
+
 /**
  * Created by alexandru on 2/6/15.
  */
+
 public class E_Info {
     String fach;
     String sem;
     String group;
     String url;
+
     public String getFach() {
         return fach;
     }

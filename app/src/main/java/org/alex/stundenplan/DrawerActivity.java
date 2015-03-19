@@ -96,42 +96,42 @@ public class DrawerActivity extends Activity {
         });
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        //todo home button bei version 11
-        getActionBar().setHomeButtonEnabled(true);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        //todo login button bei version 11
+       // getActionBar().setHomeButtonEnabled(true);
 
         // ActionBarDrawerToggle ties together the the proper interactions between the sliding drawer and the action bar app icon
-        actionBarDrawerToggle = new ActionBarDrawerToggle(
-                this,						/* host Activity */
-                mDrawerLayout, 				/* DrawerLayout object */
-                R.drawable.ic_launcher,     /* nav drawer image to replace 'Up' caret */
-                R.string.drawer_open,       /* "open drawer" description for accessibility */
-                R.string.drawer_close)      /* "close drawer" description for accessibility */
-        {
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                getActionBar().setTitle(listArray[position]);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-                super.onDrawerClosed(drawerView);
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(getString(R.string.app_name));
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-                super.onDrawerOpened(drawerView);
-            }
-
-            @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
-                super.onDrawerSlide(drawerView, slideOffset);
-            }
-
-            @Override
-            public void onDrawerStateChanged(int newState) {
-                super.onDrawerStateChanged(newState);
-            }
-        };
+//     /*   actionBarDrawerToggle = new ActionBarDrawerToggle(
+//                this,						*//* host Activity *//*
+//                mDrawerLayout, 				*//* DrawerLayout object *//*
+//                R.drawable.ic_launcher,     *//* nav drawer image to replace 'Up' caret *//*
+//                R.string.drawer_open,       *//* "open drawer" description for accessibility *//*
+//                R.string.drawer_close)      *//* "close drawer" description for accessibility *//*
+//        {
+//            @Override
+//            public void onDrawerClosed(View drawerView) {
+//                getActionBar().setTitle(listArray[position]);
+//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+//                super.onDrawerClosed(drawerView);
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//                getActionBar().setTitle(getString(R.string.app_name));
+//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+//                super.onDrawerOpened(drawerView);
+//            }
+//
+//            @Override
+//            public void onDrawerSlide(View drawerView, float slideOffset) {
+//                super.onDrawerSlide(drawerView, slideOffset);
+//            }
+//
+//            @Override
+//            public void onDrawerStateChanged(int newState) {
+//                super.onDrawerStateChanged(newState);
+//            }
+//        };*/
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
 /*
         /**
@@ -183,7 +183,7 @@ public class DrawerActivity extends Activity {
                 startActivity(d);
                 break;
             case 3:
-                Intent e = new Intent(this, Login.class);
+                Intent e = new Intent(this, LoginNew.class);
                 startActivity(e);
                 break;
 
@@ -204,7 +204,7 @@ public class DrawerActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // The action bar home/up action should open or close the drawer.
+        // The action bar login/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;

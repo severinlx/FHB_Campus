@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.simple.JSONObject;
+
 /**
  * @author Alex Severin
  * 
@@ -38,8 +40,33 @@ public class wellcome extends Activity{
 	}
 	
 	public void openSettings(View view){
-		Intent myIntent = new Intent(this, Login.class);
+		Intent myIntent = new Intent(this, LoginNew.class);
 		this.startActivity(myIntent);
 	    finish();
 	}
+   /* public  void k(){
+
+        String semPref;
+        String groupPref;
+        String url;
+        SharedPreferences sharedPref = getSharedPreferences("Login",Context.MODE_PRIVATE);
+        String fachPref = sharedPref.getString("fachName", "noValue");
+        JSONObject fachs = new JSONObject();
+
+
+        if(!fachs.containsKey(fachPref)){
+            Intent myIntent = new Intent(this, Login.class);
+            this.startActivity(myIntent);
+            finish();
+        }
+        else{
+            editor.putString("fachPref", fachPref);
+            editor.putString("url", url);
+            Intent myIntent = new Intent(this, Login.class);
+            this.startActivity(myIntent);
+            finish();
+        }
+
+
+    }*/
 }

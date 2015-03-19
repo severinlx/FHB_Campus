@@ -5,7 +5,7 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>org.alex.stundenplan.backend.MyEndpoint, org.alex.stundenplan.backend.ParserEndpoint</param-value>
+            <param-value>org.alex.stundenplan.backend.MyEndpoint, org.alex.stundenplan.backend.ParserEndpoint, org.alex.stundenplan.backend.CombinationEndPoint </param-value>
 
         </init-param>
     </servlet>

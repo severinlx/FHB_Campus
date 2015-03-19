@@ -26,10 +26,6 @@
             android:configChanges="orientation"
             android:noHistory="true" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Home"
@@ -39,9 +35,7 @@
         <activity
             android:name=".Plan"
             android:configChanges="orientation"
-            android:noHistory="true" >
-
-        </activity>
+            android:noHistory="true" ></activity>
         <activity
             android:name=".DrawerActivity"
             android:configChanges="orientation"
@@ -56,20 +50,32 @@
             android:name=".iq.EventDetailActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
-        </activity>
+            </activity>
         <activity android:name=".Login" />
+
+
+
+        <activity android:name=".LoginNew">
+        </activity>
+
+
         <activity
             android:name=".mensa.MensaActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".backendConnection.Backend_Connect"
-            android:label="@string/title_activity_backend__connect">
-
+            android:label="@string/title_activity_backend__connect" >
         </activity>
-
-
+        <activity
+            android:name=".cacheTest"
+            android:label="@string/title_activity_cache_test" >
+        </activity>
     </application>
 
 </manifest>

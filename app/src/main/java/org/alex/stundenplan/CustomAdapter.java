@@ -28,54 +28,24 @@ public class CustomAdapter extends BaseAdapter {
     private static ParserEndpoint parser=null;
     String url="Stundenplan/ws1415/plan/acs-3.html";
     List<ESubject> subjectList = new ArrayList<>();
-	// -------------------------------Constructor----------------------------------;
-	public CustomAdapter(Context context, Integer[] preferences)
-			throws Exception {
+    org.alex.stundenplan.List list;
 
-		super();
-		this.context = context;
-		// get list in Background:
-        if(parser == null) { // Only do this once
-            ParserEndpoint.Builder builder = new ParserEndpoint.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("https://fhb-backend.appspot.com/_ah/api/");
+	// -------------------------------Constructor becomes the list-------------
+	public CustomAdapter(Context context) throws Exception {
+        this.context = context;
 
-            // options for running against local devappserver
-            // - 10.0.2.2 is localhost's IP address in Android emulator
-            // - turn off compression when running against local devappserver
-            // .setRootUrl("http://10.0.2.2:8080/_ah/api/")
-            // .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-            //@Override
-            // public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
-            //      abstractGoogleClientRequest.setDisableGZipContent(true);
-            // }
-            //  });
-
-            // end options for devappserver
-            builder.setApplicationName("FHB");
-            parser  = builder.build();
-        }
-
-        //----------------------main method:--------------------------------
-
-        try {
-
-            subjectList = parser.getList(url).execute().getItems();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+            list = new org.alex.stundenplan.List(context);
+            subjectList = list.getSubjectList();
 
             //todo remember old version of becoming list
 			//subjectList = simpleParser.getList(context, preferences);
+    }
 
-	}
-
-	// --------------------------------------Adapter Get View--------------------------------
+	// --------------------------------------Design: --------------------------
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
-		if (arg1 == null) {
-			LayoutInflater inflater = (LayoutInflater) context
+
+        if (arg1 == null) {
+			LayoutInflater inflater = (LayoutInflater) this.context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			arg1 = inflater.inflate(R.layout.listitem, arg2, false);
 		}
@@ -88,7 +58,7 @@ public class CustomAdapter extends BaseAdapter {
 		TextView roomView = (TextView) arg1.findViewById(R.id.room);
 
 		// show day only in front of 1 lesson
-		if (true == true) {
+		if (subjItem.getFirstLesson() == true) {
 			dayView.setText(subjItem.getDay());
 			dayView.setVisibility(View.VISIBLE);
 		} else {
@@ -102,14 +72,10 @@ public class CustomAdapter extends BaseAdapter {
 		return arg1;
 	}
 
-    //___________________________________________________________________________________________
-
-	// ----------------------------------------get and Set-----------------------------
+	// ----------------------------------------get and Set---------------------
 	public List<ESubject> getSubjectList() {
 		return subjectList;
 	}
-
-
 
 	public int getCount() {
 		return subjectList.size();

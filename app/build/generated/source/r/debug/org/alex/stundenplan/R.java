@@ -1330,16 +1330,16 @@ containing a value of this type.
         public static final int background=0x7f090044;
         public static final int beginning=0x7f090013;
         public static final int button=0x7f090040;
-        public static final int button1=0x7f09004f;
-        public static final int button2=0x7f090050;
-        public static final int button3=0x7f090051;
-        public static final int button4=0x7f090052;
+        public static final int button1=0x7f090054;
+        public static final int button2=0x7f090055;
+        public static final int button3=0x7f090056;
+        public static final int button4=0x7f090057;
         public static final int buttonSet=0x7f09004c;
         public static final int buttonWeiter=0x7f090061;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090017;
         public static final int content_frame=0x7f090048;
-        public static final int day=0x7f090053;
+        public static final int day=0x7f09004f;
         public static final int decor_content_parent=0x7f09002f;
         public static final int default_activity_button=0x7f090024;
         public static final int dialog=0x7f09001b;
@@ -1361,7 +1361,7 @@ containing a value of this type.
         public static final int image=0x7f090023;
         public static final int left_drawer=0x7f090049;
         public static final int listMode=0x7f090009;
-        public static final int listView1=0x7f090057;
+        public static final int listView1=0x7f090053;
         public static final int listViewMensa=0x7f090058;
         public static final int list_item=0x7f090025;
         public static final int mensaText=0x7f09004e;
@@ -1373,7 +1373,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;
         public static final int radio=0x7f09002b;
-        public static final int room=0x7f090056;
+        public static final int room=0x7f090052;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
         public static final int search_button=0x7f090036;
@@ -1389,7 +1389,7 @@ containing a value of this type.
         public static final int showHome=0x7f090010;
         public static final int showTitle=0x7f090011;
         public static final int split_action_bar=0x7f090007;
-        public static final int subj=0x7f090055;
+        public static final int subj=0x7f090051;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000b;
         public static final int tableRow=0x7f09004b;
@@ -1403,7 +1403,7 @@ containing a value of this type.
         public static final int textView_mensaMeal3=0x7f09005d;
         public static final int textView_mensaMeal4=0x7f09005e;
         public static final int textWelcome=0x7f090060;
-        public static final int time=0x7f090054;
+        public static final int time=0x7f090050;
         public static final int title=0x7f090027;
         public static final int txt_events_heading=0x7f090046;
         public static final int up=0x7f090008;
@@ -1439,21 +1439,21 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_backend__connect=0x7f030017;
-        public static final int activity_event_detail=0x7f030018;
-        public static final int activity_events=0x7f030019;
-        public static final int activity_main=0x7f03001a;
-        public static final int drawer=0x7f03001b;
-        public static final int drawer_list_item=0x7f03001c;
-        public static final int footer=0x7f03001d;
-        public static final int fragment_planet=0x7f03001e;
-        public static final int home=0x7f03001f;
+        public static final int activity_cache_test=0x7f030018;
+        public static final int activity_event_detail=0x7f030019;
+        public static final int activity_events=0x7f03001a;
+        public static final int activity_main=0x7f03001b;
+        public static final int drawer=0x7f03001c;
+        public static final int drawer_list_item=0x7f03001d;
+        public static final int footer=0x7f03001e;
+        public static final int fragment_planet=0x7f03001f;
         public static final int listitem=0x7f030020;
         public static final int listview=0x7f030021;
-        public static final int mensa_activity=0x7f030022;
-        public static final int mensa_item=0x7f030023;
-        public static final int navigation_drawer_base_layout=0x7f030024;
-        public static final int preferences=0x7f030025;
-        public static final int settings=0x7f030026;
+        public static final int login=0x7f030022;
+        public static final int mensa_activity=0x7f030023;
+        public static final int mensa_item=0x7f030024;
+        public static final int navigation_drawer_base_layout=0x7f030025;
+        public static final int preferences=0x7f030026;
         public static final int start=0x7f030027;
         public static final int support_simple_spinner_dropdown_item=0x7f030028;
         public static final int wellcome=0x7f030029;
@@ -1462,6 +1462,7 @@ containing a value of this type.
         public static final int list_view_with_simple_adapter=0x7f0d0000;
         public static final int menu=0x7f0d0001;
         public static final int menu_backend__connect=0x7f0d0002;
+        public static final int menu_cache_test=0x7f0d0003;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;
@@ -1498,6 +1499,7 @@ containing a value of this type.
         public static final int qr_code_of_uuid=0x7f0b001f;
         public static final int textview=0x7f0b0020;
         public static final int title_activity_backend__connect=0x7f0b0021;
+        public static final int title_activity_cache_test=0x7f0b0022;
     }
     public static final class style {
         /** 

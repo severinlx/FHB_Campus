@@ -13,43 +13,52 @@ public class AdapterTask extends AsyncTask<Object, Void, Void> {
     CustomAdapter customAdapter;
     ProgressDialog dialog;
 
-    public AdapterTask(Context context, CustomAdapter customAdapt, ListView listview) {
+    public AdapterTask(Context context, ListView listview) {
+
         this.context = context;
-        this.customAdapter = customAdapt;
         this.listView = listview;
 
+        try {
+            customAdapter = new CustomAdapter(context);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    protected void onPreExecute() {
+   /* protected void onPreExecute() {
 
         super.onPreExecute();
         //todo on horizontal view it will crash because of progress dialog. FIx it. Do it on Mensa an on Post execute as well!!
-        dialog = ProgressDialog.show(context, "Herunterladen..", "Der Stundenplan wird heruntergeladen, warten sie bitte nur kurz..");
+        //dialog = ProgressDialog.show(context, "Herunterladen..", "Der Stundenplan wird heruntergeladen, warten sie bitte nur kurz..");
 
-    }
+    }*/
 
     @Override
     protected Void doInBackground(Object... arg0) {
         initializeAdapter();
         // TODO Auto-generated method stub
+
         return null;
     }
 
     protected void onPostExecute(Void args) {
 
-        if (dialog.isShowing())
-            dialog.dismiss();
+       // if (dialog.isShowing())
+            //dialog.dismiss();
         super.onPostExecute(args);
-        listView.setAdapter(customAdapter);
+
+        this.listView.setAdapter(customAdapter);
     }
 
     //init adapter
     public void initializeAdapter() {
 
-        Integer[] preferences = getPreferences();
-        try {
-            customAdapter = new CustomAdapter(context, preferences);
+       // Integer[] preferences = getPreferences();
 
+        try {
+            if(customAdapter==null) {
+                customAdapter = new CustomAdapter(context);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

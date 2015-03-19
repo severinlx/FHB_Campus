@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/cron/cronParser</url>
+        <description>insert plan in database every 6 hour</description>
+        <schedule>every 6 hours</schedule>
+    </cron>
+
+</cronentries>
