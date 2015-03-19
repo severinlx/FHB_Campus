@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.helpClasses;
 
 /**
  * Created by alexandru on 12/13/14.
@@ -17,10 +17,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import org.alex.stundenplan.LoginActivity;
+import org.alex.stundenplan.R;
 import org.alex.stundenplan.iq.EventActivity;
 import org.alex.stundenplan.mensa.MensaActivity;
+import org.alex.stundenplan.stundenplan.PlanActivity;
 
 /**
  * @author dipenp
@@ -45,7 +47,7 @@ public class DrawerActivity extends Activity {
     protected ListView mDrawerList;
 
     /**
-     * List item array for navigation drawer items.
+     * SubjectsList item array for navigation drawer items.
      * */
     protected String[] listArray = { "Stundenplan", "Mensa", "IQ Club", "Einstellungen"};
 
@@ -97,7 +99,7 @@ public class DrawerActivity extends Activity {
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
         //getActionBar().setDisplayHomeAsUpEnabled(true);
-        //todo login button bei version 11
+        //todo activity_login button bei version 11
        // getActionBar().setHomeButtonEnabled(true);
 
         // ActionBarDrawerToggle ties together the the proper interactions between the sliding drawer and the action bar app icon
@@ -169,7 +171,7 @@ public class DrawerActivity extends Activity {
 
         switch (position) {
             case 0:
-                Intent a = new Intent(this, Plan.class);
+                Intent a = new Intent(this, PlanActivity.class);
                 startActivity(a);
                 break;
             case 1:
@@ -183,7 +185,7 @@ public class DrawerActivity extends Activity {
                 startActivity(d);
                 break;
             case 3:
-                Intent e = new Intent(this, LoginNew.class);
+                Intent e = new Intent(this, LoginActivity.class);
                 startActivity(e);
                 break;
 
@@ -204,7 +206,7 @@ public class DrawerActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // The action bar login/up action should open or close the drawer.
+        // The action bar activity_login/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;

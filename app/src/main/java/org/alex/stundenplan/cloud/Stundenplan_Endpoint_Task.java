@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.cloud;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -14,15 +14,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class EndpointsAsyncTask extends AsyncTask<String, Void, List<ESubject>> {
-    private static MyApi myApiService = null;
-    private Context context;
-    private static ParserEndpoint parser=null;
+public class Stundenplan_Endpoint_Task extends AsyncTask<String, Void, List<ESubject>> {
 
-    List<ESubject> subjectList = new ArrayList<>();
+
+
+
 
 
     protected List<ESubject> doInBackground(String... params) {
+
+        ParserEndpoint parser=null;
+
+        List<ESubject> subjectList = new ArrayList<>();
+
 
       String  url = params[0];
 
@@ -32,8 +36,6 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, List<ESubject>> {
         if(parser == null) { // Only do this once
             ParserEndpoint.Builder builder = new ParserEndpoint.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
                     .setRootUrl("https://fhb-backend.appspot.com/_ah/api/");
-
-            // end options for devappserver
              builder.setApplicationName("FHB");
             parser  = builder.build();
         }

@@ -1,11 +1,16 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.helpClasses;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+
+//A class to help Day Format for Mensa
+
 public class Day {
+
 	// String today = "today";
 	// String day = "day";
+
 	protected static int dayNumber;
 	protected static String[] week={ 
 		       "mon",
@@ -26,11 +31,13 @@ public class Day {
 		       "Sontag"
 	    };
 		public static void setDayAsToday() {
+
 			SimpleDateFormat dayFormat = new SimpleDateFormat("E", Locale.US);
 			Calendar calendar = Calendar.getInstance();
 			String today = dayFormat.format(calendar.getTime()).toLowerCase(Locale.US);
 			dayNumber= getDayNumber(today) ;
 			if(dayNumber==6) dayNumber=0;
+
 		}
 		
 		public static void increaseDay(){
@@ -51,6 +58,13 @@ public class Day {
 		
 		
 		public static String fineDate(String date){
+            System.out.println(date);
+
+            if(date.length()<7){
+
+                return "in Menu: ";
+            }
+
 			//date = "01.04.2015";
 			Calendar calender = Calendar.getInstance();
 			Integer weekDay;

@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.cloud;
 
 
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+
+import org.alex.stundenplan.LoginActivity;
 import org.alex.stundenplan.backend.combinationEndpoint.CombinationEndpoint;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,7 +15,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
 
-class LoginCombinationTask extends AsyncTask<Context, Void, JSONObject> {
+public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSONObject> {
 
     private static CombinationEndpoint combinationEndpoint = null;
     JSONObject fachs = null;
@@ -47,7 +49,7 @@ class LoginCombinationTask extends AsyncTask<Context, Void, JSONObject> {
 
 
             try {
-                String season = LoginNew.getActualSeason();
+                String season = LoginActivity.getActualSeason();
                 String json = combinationEndpoint.getCombination(season).execute().getFachs();
                 System.out.println("json "+json);
                 JSONParser jsonParser = new JSONParser();

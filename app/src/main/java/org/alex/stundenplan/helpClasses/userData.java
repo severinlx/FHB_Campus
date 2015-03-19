@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.helpClasses;
 /**
  * @author Alex Severin
  * 

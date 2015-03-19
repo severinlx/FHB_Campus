@@ -1,10 +1,11 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.stundenplan;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import org.alex.stundenplan.helpClasses.CacheManager;
 import org.alex.stundenplan.backend.parserEndpoint.model.ESubject;
-import org.json.JSONArray;
+import org.alex.stundenplan.cloud.Stundenplan_Endpoint_Task;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -15,32 +16,24 @@ import java.util.concurrent.ExecutionException;
 
 
 
-
-
-
-
-public class List {
+public class SubjectsList {
     java.util.List<ESubject> subjectList = new ArrayList<>();
     Context context;
     String url;
-    boolean isCache;
     CacheManager cacheManager;
 
 
     //construct call main method to achieve list
-    public List(Context context) {
+    public SubjectsList(Context context) {
 
         //to do: if cache get list from cache if not get it online check cache
 
         this.context= context;
         cacheManager = new CacheManager(context);
         //url="Stundenplan/ws1415/plan/acs-3.html";
-        //to do:
+
         SharedPreferences sharedPreferences = context.getSharedPreferences("LoginNew", Context.MODE_PRIVATE);
         this.url = sharedPreferences.getString("URL", " ");
-
-
-        System.out.println("url "+url);
 
         achiveList();
     }
@@ -51,18 +44,18 @@ public class List {
 
         //cacheManager.clear();
         if(cacheManager.isCache()){
+
             subjectList = cacheManager.readCache();
-            System.out.println("from cache");
        }
         else {
             try {
-                subjectList = new EndpointsAsyncTask().execute(url).get();
+
+                subjectList = new Stundenplan_Endpoint_Task().execute(url).get();
                 cacheManager.writeCache(subjectList);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
-                e.printStackTrace();
             }
         }
     }

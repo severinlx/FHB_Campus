@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import org.alex.stundenplan.Day;
+import org.alex.stundenplan.helpClasses.Day;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -22,115 +22,112 @@ import android.text.Html;
 
 public class Json {
 	
-	static JSONObject mealsJO=null;
-	static JSONArray mealsJA = null ;
-	static String date=null;
-	static JSONArray mealsA = null;
+	static JSONObject jsonChild =null;
+	static JSONArray json = null ;
+	static JSONArray mealsJson = null;
 	static String meal;
 	
-	public static ArrayList<MensaDay> getJson() throws JSONException, ParseException{
-        //ArrayList<String> meals=new ArrayList<String>();
-        MensaDay mensaToDay = new MensaDay();
+	public static ArrayList<MensaDay> parseMeals() {
+
+
+        MensaDay mensaToday = new MensaDay();
         MensaDay mensaTommorow = new MensaDay();
+
         ArrayList<MensaDay> mensaDayList = new ArrayList<MensaDay>();
+
 	    String	url = "https://mobile-quality-research.org/services/meals/v2";
-        System.out.println("in getJson");
-        String input = " ";
-                input=readJSON(url);
+
+        String input = readJSON(url);
+
         try {
-            mealsJA=new JSONArray(input);
 
-            //todaY:
-			mealsJO=(JSONObject) mealsJA.get(0);
-			//add date
-			date=getToday();
+            json = new JSONArray(input);
+
+            //-----------      today meals:
+
+			jsonChild = (JSONObject) json.get(0);
+
             //get meals Json Array
-            mealsA = mealsJO.getJSONArray("meals");
-            //todo mensaday
-            mensaToDay.date = date;
-			for (int j = 0; j < mealsA.length(); j++) {
-				meal= Html.fromHtml((String) mealsA.get(j)).toString();
-             //todo mensaday
-             mensaToDay.meals.add(meal);
-			}
-			
-		    //extract json for tommorow:
-            mealsJO=null;
-            mealsJO=(JSONObject) mealsJA.get(1);
-            //add date
-			date=getTommorow();
-            //todo mensaday
-            mensaTommorow.date=date;
-            //add meals:
-            mealsA = mealsJO.getJSONArray("meals");
-			for (int j = 0; j < mealsA.length(); j++) {
-                System.out.println("in mealsA iteration Nr: "+j);
-                meal= Html.fromHtml((String) mealsA.get(j)).toString();
-                //todo mensaday
-                mensaTommorow.meals.add(meal);
-			}
-			   } catch (Exception e) {
-		    	 
-		      e.printStackTrace();
-		    }
 
-        mensaDayList.add(mensaToDay);
+            mealsJson = jsonChild.getJSONArray("meals");
+
+            //set the Date:
+
+            mensaToday.date = Day.fineDate((String) jsonChild.get("date"));
+
+            //set Meals:
+
+			for (int j = 0; j < mealsJson.length(); j++) {
+
+				meal= Html.fromHtml((String) mealsJson.get(j)).toString();
+                mensaToday.meals.add(meal);
+
+			}
+
+			
+		    //------------      tommorow meals:
+
+            jsonChild =(JSONObject) json.get(1);
+
+            //set the Date
+
+           mensaTommorow.date = Day.fineDate(jsonChild.getString("date"));;
+
+            //set Meals:
+
+            mealsJson = jsonChild.getJSONArray("meals");
+			for (int j = 0; j < mealsJson.length(); j++) {
+
+                meal= Html.fromHtml((String) mealsJson.get(j)).toString();
+
+                mensaTommorow.meals.add(meal);
+
+			}
+            } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        mensaDayList.add(mensaToday);
         mensaDayList.add(mensaTommorow);
-        System.out.println("listSize"+mensaDayList.size());
-        System.out.println(mensaDayList.get(0).date +"    "+mensaDayList.get(0).meals.size() );
+
         return mensaDayList;
 		
 	}
-	public static String getToday(){
-		//todaY:
-		try {
-		mealsJO=(JSONObject) mealsJA.get(0);
-		//get date
-		date=(String) mealsJO.get("date");
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		date=Day.fineDate(date);
-		return date;
-	}
-	public static String getTommorow(){
-		mealsJO=null;
-		try {
-		mealsJO=(JSONObject) mealsJA.get(1);
-		date=(String) mealsJO.get("date");
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		date=Day.fineDate(date);
-		return date;
-	}
+
 	public static String readJSON(String url) {
+
 	    StringBuilder builder = new StringBuilder();
 	    HttpClient client = new DefaultHttpClient();
 	    client = MyHttpClient.getNewHttpClient();
-	    HttpGet httpGet = new HttpGet("https://mobile-quality-research.org/services/meals/v2");
+
+	    HttpGet httpGet = new HttpGet(url);
+
 	    try {
+
 	      HttpResponse response = client.execute(httpGet);
 	      StatusLine statusLine = response.getStatusLine();
+
 	      int statusCode = statusLine.getStatusCode();
+
 	      if (statusCode == 200) {
+
 	        HttpEntity entity = response.getEntity();
 	        InputStream content = entity.getContent();
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(content));
 	        String line;
+
 	        while ((line = reader.readLine()) != null) {
 	          builder.append(line);
 	        }
-	      } else { 
+
 	      }
+
 	    } catch (ClientProtocolException e) {
 	      e.printStackTrace();
 	    } catch (IOException e) {
 	      e.printStackTrace();
 	    }
-        System.out.println("in readJson string at the end  "+builder.toString().length()+"    "+builder.toString());
+
+
         return builder.toString();
 	  }
 

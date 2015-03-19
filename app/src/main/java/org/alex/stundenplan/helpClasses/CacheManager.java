@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.helpClasses;
 
 import android.content.Context;
 
@@ -35,7 +35,7 @@ import java.util.*;
 
 public class CacheManager {
     protected Context context;
-    //protected java.util.List<ESubject> subjectList = new ArrayList<>();
+    //protected java.util.SubjectsList<ESubject> subjectList = new ArrayList<>();
     protected String FILENAME = "SubjListCache";
     protected File file;
     int time;
@@ -65,9 +65,10 @@ public class CacheManager {
 
     public boolean writeCache(java.util.List<ESubject> subjectList ){
 
+
         time = c.get(Calendar.SECOND);
 
-        //creating Json from List
+        //creating Json from SubjectsList
 
 
             JSONArray jsonArray = new JSONArray();
@@ -82,8 +83,6 @@ public class CacheManager {
                 jsonObject.put("firstLesson", subject.getFirstLesson());
                 jsonArray.add(jsonObject);
 
-                System.out.println("in for loop ");
-                System.out.println("            day in loop         "+jsonObject.get("day"));
             }
 
 
@@ -94,8 +93,6 @@ public class CacheManager {
             //test
             JSONObject testO = (JSONObject) jsonArray.get(1);
             String day = (String) testO.get(0);
-            System.out.println("day  "+ day);
-            System.out.println("json Array  " + jsonArray.toJSONString());
             fileWriter.write(jsonArray.toJSONString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -115,6 +112,7 @@ public class CacheManager {
     }
 
     public java.util.List<ESubject> readCache(){
+
 
         java.util.List<ESubject>  subjectList = new ArrayList<>();
 
@@ -147,7 +145,6 @@ public class CacheManager {
             subjectList.add(subject);
         }
 
-        System.out.println(subjectList.get(0).getRoom()+"            -------------------------------------------------------------------------------------");
         return  subjectList;
     }
 
@@ -185,12 +182,12 @@ public class CacheManager {
         this.context = context;
     }
 
-   /* public List<ESubject> getSubjectList() {
+   /* public SubjectsList<ESubject> getSubjectList() {
         return subjectList;
     }*/
 
 /*
-    public void setSubjectList(List<ESubject> subjectList) {
+    public void setSubjectList(SubjectsList<ESubject> subjectList) {
         this.subjectList = subjectList;
     }
 */

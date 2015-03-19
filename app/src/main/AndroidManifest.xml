@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="org.alex.stundenplan"
     android:configChanges="orientation"
     android:versionCode="18"
@@ -21,46 +22,9 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/FHBTheme" >
-        <activity
-            android:name=".wellcome"
-            android:configChanges="orientation"
-            android:noHistory="true" >
-
-        </activity>
-        <activity
-            android:name=".Home"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
-        </activity>
-        <activity
-            android:name=".Plan"
-            android:configChanges="orientation"
-            android:noHistory="true" ></activity>
-        <activity
-            android:name=".DrawerActivity"
-            android:configChanges="orientation"
-            android:noHistory="true" >
-        </activity>
-        <activity
-            android:name=".iq.EventActivity"
-            android:configChanges="orientation"
-            android:noHistory="true" >
-        </activity>
-        <activity
-            android:name=".iq.EventDetailActivity"
-            android:configChanges="orientation"
-            android:noHistory="true" >
-            </activity>
-        <activity android:name=".Login" />
-
-
-
-        <activity android:name=".LoginNew">
-        </activity>
-
 
         <activity
-            android:name=".mensa.MensaActivity"
+            android:name=".WellcomeActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
             <intent-filter>
@@ -68,14 +32,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".backendConnection.Backend_Connect"
-            android:label="@string/title_activity_backend__connect" >
+            android:name=".stundenplan.PlanActivity"
+            android:configChanges="orientation"
+            android:noHistory="true" >
         </activity>
+
         <activity
-            android:name=".cacheTest"
-            android:label="@string/title_activity_cache_test" >
+            android:name=".helpClasses.DrawerActivity"
+            android:configChanges="orientation"
+            android:noHistory="true" >
         </activity>
+
+        <activity
+            android:name=".iq.EventActivity"
+            android:configChanges="orientation"
+            android:noHistory="true" >
+        </activity>
+
+        <activity
+            android:name=".iq.EventDetailActivity"
+            android:configChanges="orientation"
+            android:noHistory="true" >
+        </activity>
+
+        <activity android:name=".LoginActivity">
+        </activity>
+
+
+        <activity
+            android:name=".mensa.MensaActivity"
+            android:configChanges="orientation"
+            android:noHistory="true" >
+        </activity>
+
     </application>
 
 </manifest>

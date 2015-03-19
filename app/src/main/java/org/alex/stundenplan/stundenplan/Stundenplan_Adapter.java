@@ -1,4 +1,4 @@
-package org.alex.stundenplan;
+package org.alex.stundenplan.stundenplan;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,47 +7,44 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-
+import org.alex.stundenplan.R;
 import org.alex.stundenplan.backend.parserEndpoint.ParserEndpoint;
 import org.alex.stundenplan.backend.parserEndpoint.model.ESubject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 
 //Adapter==============================Adapter=====================================
-//@a Class to set Adapter with List of Subject and indicating view for diferent components of a subject. The subject list is retrieved in Constructor from parse class
-public class CustomAdapter extends BaseAdapter {
+//@a Class to set Adapter with SubjectsList of Subject and indicating view for diferent components of a subject. The subject list is retrieved in Constructor from parse class
+public class Stundenplan_Adapter extends BaseAdapter {
 
 	protected String fileName;
 	protected Context context;
     private static ParserEndpoint parser=null;
     String url="Stundenplan/ws1415/plan/acs-3.html";
     List<ESubject> subjectList = new ArrayList<>();
-    org.alex.stundenplan.List list;
+    SubjectsList list;
 
 	// -------------------------------Constructor becomes the list-------------
-	public CustomAdapter(Context context) throws Exception {
+	public Stundenplan_Adapter(Context context){
         this.context = context;
 
-            list = new org.alex.stundenplan.List(context);
+            list = new SubjectsList(context);
             subjectList = list.getSubjectList();
 
-            //todo remember old version of becoming list
-			//subjectList = simpleParser.getList(context, preferences);
+
     }
 
 	// --------------------------------------Design: --------------------------
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 
+
         if (arg1 == null) {
-			LayoutInflater inflater = (LayoutInflater) this.context
+            LayoutInflater inflater = (LayoutInflater) this.context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			arg1 = inflater.inflate(R.layout.listitem, arg2, false);
+			arg1 = inflater.inflate(R.layout.stundenplan_list_item, arg2, false);
 		}
 		// get Subject from list:
 		ESubject subjItem = subjectList.get(arg0);
@@ -56,6 +53,7 @@ public class CustomAdapter extends BaseAdapter {
 		TextView timeView = (TextView) arg1.findViewById(R.id.time);
 		TextView subjView = (TextView) arg1.findViewById(R.id.subj);
 		TextView roomView = (TextView) arg1.findViewById(R.id.room);
+
 
 		// show day only in front of 1 lesson
 		if (subjItem.getFirstLesson() == true) {
@@ -78,7 +76,7 @@ public class CustomAdapter extends BaseAdapter {
 	}
 
 	public int getCount() {
-		return subjectList.size();
+        return subjectList.size();
 	}
 
 	public ESubject getItem(int arg0) {

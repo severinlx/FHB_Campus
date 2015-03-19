@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.alex.stundenplan.DrawerActivity;
+import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.R;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -18,7 +18,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;

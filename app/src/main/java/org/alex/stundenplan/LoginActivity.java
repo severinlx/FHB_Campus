@@ -1,9 +1,7 @@
 package org.alex.stundenplan;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -12,11 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.alex.stundenplan.AdapterTask;
+import org.alex.stundenplan.cloud.LoginCombination_Endpoint_Task;
+import org.alex.stundenplan.helpClasses.CacheManager;
+import org.alex.stundenplan.stundenplan.PlanActivity;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -30,7 +29,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by alexandru on 17.03.15.
  */
-public class LoginNew extends Activity{
+public class LoginActivity extends Activity{
 
     String fachPreference;
     String semesterPreference;
@@ -57,7 +56,7 @@ public class LoginNew extends Activity{
         sharedPref = getSharedPreferences("LoginNew", Context.MODE_PRIVATE);
         editor = sharedPref.edit();
         checkSeason();//check season and if to old clear the data
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         fachSpinner();
 
         System.out.println("sharedpref   "+sharedPref.getString(FACH, "no Fach")+ sharedPref.getString(SEMESTER, "no Sem")+ sharedPref.getString(GROUP, "no group"));
@@ -185,7 +184,7 @@ public class LoginNew extends Activity{
     public void onBackPressed() {
         if (preferIsSet()) {
             this.finish();
-            Intent myIntent = new Intent(this, Plan.class);
+            Intent myIntent = new Intent(this, PlanActivity.class);
             startActivity(myIntent);
         } else {JSONParser jsonParser = null;
             super.onBackPressed();
@@ -193,7 +192,7 @@ public class LoginNew extends Activity{
     }
 
     public void checkSeason(){
-        //check if login Pref aktuell
+        //check if activity_login Pref aktuell
         String actualSeason = null;
         try {
             actualSeason = getActualSeason();
@@ -205,6 +204,7 @@ public class LoginNew extends Activity{
         if (sharedPref.getString("season", "noseason") != actualSeason) {
             editor.clear();
             editor.putString("season", actualSeason);
+            editor.commit();
         }
     }
 
@@ -233,7 +233,7 @@ public class LoginNew extends Activity{
 
         if (networkInfo != null && networkInfo.isConnected() ) {
 
-            LoginCombinationTask combTask = new LoginCombinationTask();
+            LoginCombination_Endpoint_Task combTask = new LoginCombination_Endpoint_Task();
             try {
                 fachs = combTask.execute(context).get();
             } catch (InterruptedException e) {
@@ -340,7 +340,7 @@ public class LoginNew extends Activity{
         return season;
     }
 
-    //================== open Plan
+    //================== open PlanActivity
     public void openPlan(View view) {
 
         CacheManager cacheManager = new CacheManager(context);
@@ -356,18 +356,18 @@ public class LoginNew extends Activity{
 
             //todo: in cache manager check cache for the precise url.. so you dont have to delete it now
 
-            //delete cache, because List.class ist looking if there is cache when retreiving the subjects list
+            //delete cache, because SubjectsList.class ist looking if there is cache when retreiving the subjects list
             cacheManager.clear();
         }
 
-        System.out.println("url in login "+ urlPreference);
+        System.out.println("url in activity_login "+ urlPreference);
 
 
 
         if (preferIsSet()) {
             System.out.println("pref is set");
 
-            Intent myIntent = new Intent(this, Plan.class);
+            Intent myIntent = new Intent(this, PlanActivity.class);
             this.startActivity(myIntent);
             finish();
         } else {

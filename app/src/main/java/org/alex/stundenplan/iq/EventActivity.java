@@ -11,20 +11,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.alex.stundenplan.DrawerActivity;
+import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.R;
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
