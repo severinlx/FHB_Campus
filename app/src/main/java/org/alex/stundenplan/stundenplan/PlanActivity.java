@@ -67,7 +67,7 @@ public class PlanActivity extends DrawerActivity {
 
         //if connection exist go in asynctask to init adapter
 
-        Stundenplan_Adapter stundenplanAdapter = null ;
+        Stundenplan_Adapter stundenplanAdapter;
         if (cacheManager.isCache() || (networkInfo != null && networkInfo.isConnected())){
             try {
                 stundenplanAdapter = new Stundenplan_Adapter(context);
