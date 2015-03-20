@@ -55,7 +55,7 @@ public class PlanActivity extends DrawerActivity {
     }
 
 
-    //==============      Adapter to load the PlanActivity on activity_stundenplan_list:   ==================
+    //e==============      Adapter to load the PlanActivity on activity_stundenplan_list:   ==================
     public void makeAdapter() {
 
 
