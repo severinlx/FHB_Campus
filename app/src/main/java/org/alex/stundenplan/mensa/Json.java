@@ -35,7 +35,7 @@ public class Json {
 
         ArrayList<MensaDay> mensaDayList = new ArrayList<MensaDay>();
 
-	    String	url = "https://mobile-quality-research.org/services/meals/v2";
+	    String	url = "https://mobile-quality-research.org/services/meals/";
 
         String input = readJSON(url);
 
@@ -52,8 +52,11 @@ public class Json {
             mealsJson = jsonChild.getJSONArray("meals");
 
             //set the Date:
-
-            mensaToday.date = Day.fineDate((String) jsonChild.get("date"));
+     try {
+    mensaToday.date = Day.fineDate((String) jsonChild.get("date"));
+     } catch (JSONException e) {
+                mensaToday.date = " ";
+            }
 
             //set Meals:
 
@@ -71,7 +74,12 @@ public class Json {
 
             //set the Date
 
-           mensaTommorow.date = Day.fineDate(jsonChild.getString("date"));;
+            try {
+                mensaTommorow.date = Day.fineDate((String) jsonChild.get("date"));
+            } catch (JSONException e) {
+                mensaTommorow.date = " ";
+            }
+
 
             //set Meals:
 
