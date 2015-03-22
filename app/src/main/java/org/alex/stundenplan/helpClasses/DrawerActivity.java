@@ -6,7 +6,9 @@ package org.alex.stundenplan.helpClasses;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -31,7 +33,9 @@ import org.alex.stundenplan.stundenplan.PlanActivity;
  * We are going to extend all our other activites from this BaseActivity so that every activity will have Navigation Drawer in it.
  * This activity layout contain one frame layout in which we will add our child activity layout.
  */
-public class DrawerActivity extends Activity {
+public class DrawerActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     /**
      *  Frame layout: Which is going to be used as parent layout for child activity layout.
@@ -98,42 +102,43 @@ public class DrawerActivity extends Activity {
         });
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-        //todo activity_login button bei version 11
-       // getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //todo login button bei version 11
+        getSupportActionBar().setHomeButtonEnabled(true);
+         toolbar = (Toolbar) findViewById(R.id.toolbar);;
 
         // ActionBarDrawerToggle ties together the the proper interactions between the sliding drawer and the action bar app icon
-//     /*   actionBarDrawerToggle = new ActionBarDrawerToggle(
-//                this,						*//* host Activity *//*
-//                mDrawerLayout, 				*//* DrawerLayout object *//*
-//                R.drawable.ic_launcher,     *//* nav drawer image to replace 'Up' caret *//*
-//                R.string.drawer_open,       *//* "open drawer" description for accessibility *//*
-//                R.string.drawer_close)      *//* "close drawer" description for accessibility *//*
-//        {
-//            @Override
-//            public void onDrawerClosed(View drawerView) {
-//                getActionBar().setTitle(listArray[position]);
-//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-//                super.onDrawerClosed(drawerView);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//                getActionBar().setTitle(getString(R.string.app_name));
-//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-//                super.onDrawerOpened(drawerView);
-//            }
-//
-//            @Override
-//            public void onDrawerSlide(View drawerView, float slideOffset) {
-//                super.onDrawerSlide(drawerView, slideOffset);
-//            }
-//
-//            @Override
-//            public void onDrawerStateChanged(int newState) {
-//                super.onDrawerStateChanged(newState);
-//            }
-//        };*/
+        actionBarDrawerToggle = new ActionBarDrawerToggle(
+                this,						/* host Activity */
+                mDrawerLayout, 				/* DrawerLayout object */
+                toolbar,     /* nav drawer image to replace 'Up' caret */
+                R.string.drawer_open,       /* "open drawer" description for accessibility */
+                R.string.drawer_close)      /* "close drawer" description for accessibility */
+        {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                getSupportActionBar().setTitle(listArray[position]);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                getSupportActionBar().setTitle(getString(R.string.app_name));
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                super.onDrawerStateChanged(newState);
+            }
+        };
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
 /*
         /**
