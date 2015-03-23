@@ -10,13 +10,13 @@
         android:id="@+id/textWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200sp"
         android:gravity="bottom"
         android:paddingLeft="10sp"
         android:paddingRight="10sp"
-        android:text="Willkommen, danke daß du dich für FHB Campus entschieden hast!"
+        android:text="Willkommen! Danke daß du dich für FHB Campus entschieden hast!"
         android:textColor="#979797"
-        android:textSize="20dp" />
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/buttonWeiter"
@@ -24,7 +24,7 @@
         android:layout_height="82sp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
-        android:background="#8b000d"
+        android:background="@color/primary_dark"
         android:gravity="center_vertical|center_horizontal"
         android:onClick="openSettings"
         android:text="Weiter"

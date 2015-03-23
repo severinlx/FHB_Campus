@@ -31,7 +31,7 @@ public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSO
         SharedPreferences sharedPref = context.getSharedPreferences("LoginNew", Context.MODE_PRIVATE);
         //editor to share preferencess:
         SharedPreferences.Editor editor = sharedPref.edit();
-        String loginCombinationJson ="loginCombinationJson";
+        String loginCombinationJson ="loginCombination";
 
 
         //--------------------cloud connection------------------------------
@@ -58,6 +58,7 @@ public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSO
 
                 editor.putString(loginCombinationJson, json);
                 editor.putString("season", season);
+                editor.commit();
 
             } catch (ParseException e) {
                 e.printStackTrace();

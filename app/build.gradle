@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "org.alex.stundenplan"
-        minSdkVersion 14
+        minSdkVersion 11
         targetSdkVersion 21
     }
 

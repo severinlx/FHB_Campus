@@ -22,7 +22,7 @@
         android:background="#ff6473"
         android:paddingLeft="10sp"
         android:paddingRight="10sp"
-        android:textColor="#ffffff"
+        android:textColor="#FFFFFF"
         android:text="Fach wählen" />
 
     <Spinner

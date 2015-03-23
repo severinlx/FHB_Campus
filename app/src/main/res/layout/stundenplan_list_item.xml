@@ -9,24 +9,28 @@
         android:id="@+id/day"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
-        android:paddingLeft="8sp"
+        android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#9F000F"
         android:lineSpacingMultiplier="1"
-        android:textColor="#ffffff"
-        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:background="@color/primary_dark"
+        android:text="DAY"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/time"
+        android:paddingTop="6sp"
+        android:gravity="right"
         android:paddingLeft="8sp"
-        android:layout_width="60sp"
+        android:paddingRight="8sp"
+        android:layout_width="68sp"
         android:layout_height="fill_parent"
         android:layout_below="@+id/day"
-        android:background="#f8f8ff"
         android:text="time"
-        android:textColor="#800000"
+        android:textColor="@color/accent"
+        android:background="@color/white"
         android:textSize="15sp" />
 
     <TextView
@@ -35,16 +39,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/day"
         android:layout_toRightOf="@+id/time"
-        android:background="#f8f8ff"
         android:lineSpacingMultiplier="1"
-        android:paddingTop="2sp"
+        android:paddingTop="4sp"
         android:paddingBottom="2sp"
         android:paddingLeft="4sp"
         android:paddingRight="6sp"
         android:text="Subject"
-        android:textColor="#330033"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="17sp"/>
 
     <TextView
         android:id="@+id/room"
@@ -56,7 +58,7 @@
         android:layout_toRightOf="@+id/time"
         android:paddingRight="6sp"
         android:text="room"
-        android:textColor="#7979ff"
+        android:textColor="@android:color/secondary_text_light"
         android:textSize="15sp" />
 
 </RelativeLayout>
