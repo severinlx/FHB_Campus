@@ -24,7 +24,7 @@
         android:theme="@style/FHBTheme" >
 
         <activity
-            android:name=".WellcomeActivity"
+            android:name=".WelcomeActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
             <intent-filter>
