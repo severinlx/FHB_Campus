@@ -21,7 +21,7 @@ import org.alex.stundenplan.stundenplan.PlanActivity;
  *  3 design
  * 
  */
-public class WelcomeActivity extends Activity{
+public class WelcomeActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
