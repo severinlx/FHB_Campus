@@ -3,20 +3,19 @@ package org.alex.stundenplan.helpClasses;
 /**
  * Created by alexandru on 12/13/14.
  */
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
@@ -53,7 +52,7 @@ public class DrawerActivity extends ActionBarActivity {
     /**
      * SubjectsList item array for navigation drawer items.
      * */
-    protected String[] listArray = { "Stundenplan", "Mensa", "IQ Club", "Einstellungen"};
+    protected String[] listArray;
 
     /**
      * Static variable for selected item position. Which can be used in child activity to know which item is selected from the list.
@@ -82,6 +81,8 @@ public class DrawerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer_base_layout);
 
+        listArray = getResources().getStringArray(R.array.nav_items);
+
         frameLayout = (FrameLayout)findViewById(R.id.content_frame);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -90,7 +91,11 @@ public class DrawerActivity extends ActionBarActivity {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
         // set up the drawer's list view with items and click listener
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, listArray));
+        mDrawerList.setAdapter(new DrawerAdapter(
+                this,
+                R.layout.navigation_drawer_list_item,
+                listArray));
+
         mDrawerList.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
@@ -105,7 +110,7 @@ public class DrawerActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //todo login button bei version 11
         getSupportActionBar().setHomeButtonEnabled(true);
-         toolbar = (Toolbar) findViewById(R.id.toolbar);;
+        toolbar = (Toolbar) findViewById(R.id.toolbar);;
 
         // ActionBarDrawerToggle ties together the the proper interactions between the sliding drawer and the action bar app icon
         actionBarDrawerToggle = new ActionBarDrawerToggle(
@@ -174,29 +179,34 @@ public class DrawerActivity extends ActionBarActivity {
         mDrawerLayout.closeDrawer(mDrawerList);
         DrawerActivity.position = position; //Setting currently selected position in this field so that it will be available in our child activities.
 
+        Intent intent;
+
         switch (position) {
             case 0:
-                Intent a = new Intent(this, PlanActivity.class);
-                startActivity(a);
+                intent = new Intent(this, PlanActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
                 break;
             case 1:
-                //if(!(this instanceof MensaActivity)) {
-                    Intent b = new Intent(this, MensaActivity.class);
-                    startActivity(b);
-                //}
+                intent = new Intent(this, MensaActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
                 break;
             case 2:
-                Intent d = new Intent(this,  EventActivity.class);
-                startActivity(d);
+                intent =  new Intent(this, EventActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
                 break;
             case 3:
-                Intent e = new Intent(this, LoginActivity.class);
-                startActivity(e);
+                intent = new Intent(this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
                 break;
 
             default:
                 break;
         }
+
 
         //Toast.makeText(this, "Selected Item Position::"+position, Toast.LENGTH_LONG).show();
     }

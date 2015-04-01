@@ -5,23 +5,24 @@
     android:paddingBottom="8dp"
     android:paddingTop="6dp" >
 
-    <TextView
+    <EditText
         android:id="@+id/day"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:lineSpacingMultiplier="1"
         android:textColor="@color/white"
         android:background="@color/primary_dark"
-        android:text="DAY"
+        android:text="Day"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:singleLine="true"
+        android:inputType="textCapCharacters"/>
 
     <TextView
         android:id="@+id/time"
-        android:paddingTop="6sp"
+        android:paddingTop="4sp"
         android:gravity="right"
         android:paddingLeft="8sp"
         android:paddingRight="8sp"
@@ -29,9 +30,9 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/day"
         android:text="time"
-        android:textColor="@color/accent"
-        android:background="@color/white"
-        android:textSize="15sp" />
+        android:textSize="16sp"
+        android:layout_above="@+id/room"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/subj"
@@ -46,11 +47,11 @@
         android:paddingRight="6sp"
         android:text="Subject"
         android:textColor="@android:color/primary_text_light"
-        android:textSize="17sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/room"
-        android:paddingLeft="6sp"
+        android:paddingLeft="5sp"
         android:lineSpacingMultiplier="1.2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -59,6 +60,6 @@
         android:paddingRight="6sp"
         android:text="room"
         android:textColor="@android:color/secondary_text_light"
-        android:textSize="15sp" />
+        android:textSize="16sp" />
 
 </RelativeLayout>
