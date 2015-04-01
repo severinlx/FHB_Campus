@@ -110,7 +110,9 @@ public class DrawerActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //todo login button bei version 11
         getSupportActionBar().setHomeButtonEnabled(true);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);;
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
 
         // ActionBarDrawerToggle ties together the the proper interactions between the sliding drawer and the action bar app icon
         actionBarDrawerToggle = new ActionBarDrawerToggle(
@@ -145,20 +147,8 @@ public class DrawerActivity extends ActionBarActivity {
             }
         };
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
-/*
-        /**
-         * As we are calling BaseActivity from manifest file and this base activity is intended just to add navigation drawer in our app.
-         * We have to open some activity with layout on launch. So we are checking if this BaseActivity is called first time then we are opening our first activity.
-         * *
-        if(isLaunch){
-            /**
-             *Setting this flag false so that next time it will not open our first activity.
-             *We have to use this flag because we are using this BaseActivity as parent activity to our other activity.
-             *In this case this base activity will always be call when any child activity will launch.
-             *
-            isLaunch = false;
-            openActivity(0);
-        }*/
+
+
     }
 
     /**
@@ -241,21 +231,18 @@ public class DrawerActivity extends ActionBarActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_calendar).setVisible(!drawerOpen);
-        menu.findItem(R.id.action_mensa).setVisible(!drawerOpen);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+
         return super.onPrepareOptionsMenu(menu);
     }
 
     /* We can override onBackPressed method to toggle navigation drawer*/
     @Override
     public void onBackPressed() {
-        /*if(mDrawerLayout.isDrawerOpen(mDrawerList)){
+        if(mDrawerLayout.isDrawerOpen(mDrawerList)){
             mDrawerLayout.closeDrawer(mDrawerList);
         }else {
             mDrawerLayout.openDrawer(mDrawerList);
         }
-        */
     }
 }
 
