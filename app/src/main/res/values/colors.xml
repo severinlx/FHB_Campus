@@ -13,9 +13,10 @@
     <item name="darkred" type="color">#FFCC0000</item>
     <item name="white" type="color">#FFFFFF</item>
 
-    <item name="primary" type="color">#f44336</item>
-    <item name="primary_dark" type="color">#b71c1c</item>
-    <item name="accent" type="color">#448aff</item>
+    <color name="primary">#ffCC0A2F</color>
+    <color name="primary_dark">#ff920a26</color>
+    <color name="accent">#ffd8d8d8</color>
+    <color name="nav_item_pressed">#cccccc</color>
 
     <integer-array name="androidcolors">
         <item>@color/blue</item>

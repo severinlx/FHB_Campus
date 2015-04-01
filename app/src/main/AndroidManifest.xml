@@ -21,10 +21,10 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/FHBTheme" >
+        android:theme="@style/FHBCampusAppTheme" >
 
         <activity
-            android:name=".WellcomeActivity"
+            android:name=".WelcomeActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
             <intent-filter>
