@@ -6,13 +6,11 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.0.0'
 
+        // If you would like more information on the gradle-appengine-plugin please refer to the github page
+        // https://github.com/GoogleCloudPlatform/gradle-appengine-plugin
+       classpath 'com.google.appengine:gradle-appengine-plugin:1.9.14'
+
     }
 
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
 }
 
