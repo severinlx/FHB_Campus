@@ -1,17 +1,23 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 repositories {
     jcenter()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.0"
 
     defaultConfig {
         applicationId "org.alex.stundenplan"
-        minSdkVersion 11
-        targetSdkVersion 21
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 19
+        versionName "1.7.1"
     }
 
     buildTypes {
@@ -24,10 +30,56 @@ android {
     lintOptions{
         abortOnError false
     }
+
+    //ignore duplicate files
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+    }
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        resourcePackageName android.defaultConfig.applicationId
+
+        // If you're using Android NBS flavors you should use the following line instead of hard-coded packageName
+        // resourcePackageName android.defaultConfig.packageName
+
+        // You can set optional annotation processing options here, like these commented options:
+        logLevel 'INFO'
+        //logFile '/var/log/aa.log'
+    }
+}
+
+configurations.compile {
+    exclude module: 'spring-core'
+    exclude module: 'spring-web'
+    exclude module: 'commons-logging'
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-v4:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:recyclerview-v7:22.0.0'
+
+    //we use "AndroidAnnotations" for reduction of boilerplate code and thus increase quality and
+    //maintainability of the code
+    apt "org.androidannotations:androidannotations:3.2"
+    compile 'org.androidannotations:androidannotations-api:3.2'
+
+    //we use "Spring for Android" to simplify the communication with REST services
+    compile 'org.springframework.android:spring-android-core:1.0.1.RELEASE'
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+    compile 'org.springframework.android:spring-android-auth:1.0.1.RELEASE'
+
+    //we use "GSON" for JSON handling
+    compile 'com.google.code.gson:gson:2.3.1'
 
     compile project(path: ':backend', configuration: 'android-endpoints')
     compile ('com.googlecode.json-simple:json-simple:1.1.1') {
