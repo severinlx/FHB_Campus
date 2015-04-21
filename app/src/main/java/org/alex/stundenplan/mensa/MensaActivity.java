@@ -1,57 +1,72 @@
 package org.alex.stundenplan.mensa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.R;
+import org.alex.stundenplan.data.MensaDay;
+import org.alex.stundenplan.data.rest.FhbRestClient;
+import org.alex.stundenplan.helpClasses.DrawerActivity;
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
+import org.androidannotations.annotations.rest.RestService;
+import org.androidannotations.api.rest.RestErrorHandler;
+import org.springframework.core.NestedRuntimeException;
+import org.springframework.web.client.RestTemplate;
 
-public class MensaActivity extends DrawerActivity {
+import java.util.List;
 
-    ListView listView;
+@EActivity
+public class MensaActivity extends DrawerActivity implements RestErrorHandler {
 
-    protected void onPause(){
-        super.onPause();
+    private ListView listView;
+    private MensaAdapter mensaAdapter;
 
+    @RestService
+    FhbRestClient restClient;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+        //Adding our layout to parent class frame layout.
+        getLayoutInflater().inflate(R.layout.activity_mensa_list, frameLayout);
+
+        //Setting title and itemChecked
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
+
+        // Get ListView object from xml
+        listView = (ListView) findViewById(R.id.listViewMensa);
+
+        mensaAdapter = new MensaAdapter();
+        listView.setAdapter(mensaAdapter);
+
+        loadMeals();
     }
-    protected void onResume(){
-        super.onResume();
 
+    @Background
+    protected void loadMeals() {
+
+        Log.d("MensaActivity", "start REST");
+        restClient.setRestErrorHandler(this);
+        List<MensaDay> result = restClient.getMensaDays();
+        updateMeals(result);
+        Log.d("MensaActivity", "finished REST");
     }
-    protected void onStop(){
-        super.onStop();
+
+    @UiThread
+    protected void updateMeals(List<MensaDay> result) {
+        Log.d("MensaActivity", "update Meals");
+        mensaAdapter.updateData(result);
     }
-    protected void onRestart(){
-        super.onRestart();
+
+    @Override
+    public void onRestClientExceptionThrown(NestedRuntimeException e) {
+        Log.d("MensaActivity", "RestError");
+        e.printStackTrace();
     }
-
-     //=======================           on Create             ==========================
-
-     protected void onCreate(Bundle savedInstanceState) {
-
-          super.onCreate(savedInstanceState);
-
-         //Adding our layout to parent class frame layout.
-         getLayoutInflater().inflate(R.layout.activity_mensa_list, frameLayout);
-
-         //Setting title and itemChecked
-         mDrawerList.setItemChecked(position, true);
-         setTitle(listArray[position]);
-
-          // Get ListView object from xml
-          listView = (ListView) findViewById(R.id.listViewMensa);
-
-
-          setMeals();
-      }
-
-     //=================       setMeals(invoke Task->Adapter)       ======================
- 	public void setMeals(){
- 		 Task task = new  Task(MensaActivity.this, listView);
- 		  
- 	     task.execute();
- 	      
- 	 }
-
 }

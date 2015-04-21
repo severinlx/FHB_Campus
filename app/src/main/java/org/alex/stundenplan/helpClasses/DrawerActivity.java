@@ -22,7 +22,7 @@ import android.widget.ListView;
 import org.alex.stundenplan.LoginActivity;
 import org.alex.stundenplan.R;
 import org.alex.stundenplan.iq.EventActivity;
-import org.alex.stundenplan.mensa.MensaActivity;
+import org.alex.stundenplan.mensa.MensaActivity_;
 import org.alex.stundenplan.stundenplan.PlanActivity;
 
 /**
@@ -178,9 +178,10 @@ public class DrawerActivity extends ActionBarActivity {
                 startActivity(intent);
                 break;
             case 1:
-                intent = new Intent(this, MensaActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                MensaActivity_.intent(this).flags(Intent.FLAG_ACTIVITY_NO_ANIMATION).start();
+//                intent = new Intent(this, MensaActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
                 break;
             case 2:
                 intent =  new Intent(this, EventActivity.class);
