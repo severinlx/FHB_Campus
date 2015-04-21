@@ -6,9 +6,12 @@
 package org.alex.stundenplan.data.rest;
 
 
+import org.alex.stundenplan.data.Event;
+import org.alex.stundenplan.data.EventQrRequest;
 import org.alex.stundenplan.data.MensaDay;
 import org.androidannotations.annotations.rest.Accept;
 import org.androidannotations.annotations.rest.Get;
+import org.androidannotations.annotations.rest.Post;
 import org.androidannotations.annotations.rest.Rest;
 import org.androidannotations.api.rest.MediaType;
 import org.androidannotations.api.rest.RestClientErrorHandling;
@@ -24,5 +27,13 @@ public interface FhbRestClient extends RestClientErrorHandling {
     @Get("/meals")
     @Accept(MediaType.APPLICATION_JSON)
     List<MensaDay> getMensaDays();
+
+    @Get("/events/list.php")
+    @Accept(MediaType.APPLICATION_JSON)
+    List<Event> getEvents();
+
+    @Post("/events/list.php")
+    @Accept(MediaType.APPLICATION_JSON)
+    List<Event> getEventQr(EventQrRequest requestData);
 
 }

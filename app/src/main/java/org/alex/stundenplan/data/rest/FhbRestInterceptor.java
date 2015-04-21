@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.SortedMap;
 
 /**
- * Created by local on 21.04.15.
+ * Created by bschramke on 21.04.15.
  */
 public class FhbRestInterceptor implements ClientHttpRequestInterceptor {
 

@@ -9,6 +9,9 @@ import org.alex.stundenplan.data.MensaDay;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by bschramke on 21.04.15.
+ */
 public class MensaAdapter extends BaseAdapter {
 
     private List<MensaDay> data = new ArrayList<>();
