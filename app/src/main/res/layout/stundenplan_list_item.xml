@@ -5,7 +5,7 @@
     android:paddingBottom="8dp"
     android:paddingTop="6dp" >
 
-    <EditText
+    <TextView
         android:id="@+id/day"
         android:paddingTop="6dp"
         android:paddingBottom="6dp"

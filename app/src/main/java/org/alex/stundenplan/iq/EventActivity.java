@@ -13,6 +13,7 @@ import java.util.Locale;
 
 import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.R;
+import org.alex.stundenplan.stundenplan.PlanActivity;
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,8 +77,17 @@ public class EventActivity extends DrawerActivity  {
         new updateEventList(eventsAdapter).execute();
     }
 
+    public void onBackPressed() {
+
+        Intent myIntent = new Intent(this, PlanActivity.class);
+
+        this.startActivity(myIntent);
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
@@ -85,6 +95,7 @@ public class EventActivity extends DrawerActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.

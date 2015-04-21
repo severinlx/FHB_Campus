@@ -1,5 +1,6 @@
 package org.alex.stundenplan.mensa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -8,6 +9,7 @@ import org.alex.stundenplan.R;
 import org.alex.stundenplan.data.MensaDay;
 import org.alex.stundenplan.data.rest.FhbRestClient;
 import org.alex.stundenplan.helpClasses.DrawerActivity;
+import org.alex.stundenplan.stundenplan.PlanActivity;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
@@ -46,6 +48,15 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler {
         listView.setAdapter(mensaAdapter);
 
         loadMeals();
+
+    }
+
+    public void onBackPressed() {
+
+        Intent myIntent = new Intent(this, PlanActivity.class);
+
+        this.startActivity(myIntent);
+
     }
 
     @Background

@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.R;
+import org.alex.stundenplan.stundenplan.PlanActivity;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -59,6 +60,10 @@ public class EventDetailActivity extends DrawerActivity {
         mTxtDescription = (TextView) findViewById(R.id.event_detail_description);
     }
 
+    public void onBackPressed() {
+        Intent myIntent = new Intent(this, EventActivity.class);
+        this.startActivity(myIntent);
+    }
     private class getQRCode extends AsyncTask<String, Void, Bitmap> {
         ImageView bmpImage;
 

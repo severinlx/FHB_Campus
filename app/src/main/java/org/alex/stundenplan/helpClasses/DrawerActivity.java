@@ -4,6 +4,7 @@ package org.alex.stundenplan.helpClasses;
  * Created by alexandru on 12/13/14.
  */
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -22,6 +23,7 @@ import android.widget.ListView;
 import org.alex.stundenplan.LoginActivity;
 import org.alex.stundenplan.R;
 import org.alex.stundenplan.iq.EventActivity;
+import org.alex.stundenplan.iq.EventDetailActivity;
 import org.alex.stundenplan.mensa.MensaActivity_;
 import org.alex.stundenplan.stundenplan.PlanActivity;
 
@@ -33,6 +35,8 @@ import org.alex.stundenplan.stundenplan.PlanActivity;
  * This activity layout contain one frame layout in which we will add our child activity layout.
  */
 public class DrawerActivity extends ActionBarActivity {
+
+    private static long back_pressed;
 
     private Toolbar toolbar;
 
@@ -111,6 +115,9 @@ public class DrawerActivity extends ActionBarActivity {
         //todo login button bei version 11
         getSupportActionBar().setHomeButtonEnabled(true);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+
 
 
 
@@ -239,11 +246,16 @@ public class DrawerActivity extends ActionBarActivity {
     /* We can override onBackPressed method to toggle navigation drawer*/
     @Override
     public void onBackPressed() {
+
         if(mDrawerLayout.isDrawerOpen(mDrawerList)){
             mDrawerLayout.closeDrawer(mDrawerList);
-        }else {
-            mDrawerLayout.openDrawer(mDrawerList);
         }
+         else if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+
     }
 }
 
