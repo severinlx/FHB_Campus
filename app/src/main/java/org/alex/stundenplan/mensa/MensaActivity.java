@@ -2,6 +2,7 @@ package org.alex.stundenplan.mensa;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -21,10 +22,11 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @EActivity
-public class MensaActivity extends DrawerActivity implements RestErrorHandler {
+public class MensaActivity extends DrawerActivity implements RestErrorHandler, SwipeRefreshLayout.OnRefreshListener {
 
     private ListView listView;
     private MensaAdapter mensaAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @RestService
     FhbRestClient restClient;
@@ -40,6 +42,10 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler {
         //Setting title and itemChecked
         mDrawerList.setItemChecked(position, true);
         setTitle(listArray[position]);
+
+        // Get SwipeRefreshLayout object from xml
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(this);
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.listViewMensa);
@@ -73,11 +79,17 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler {
     protected void updateMeals(List<MensaDay> result) {
         Log.d("MensaActivity", "update Meals");
         mensaAdapter.updateData(result);
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
     public void onRestClientExceptionThrown(NestedRuntimeException e) {
         Log.d("MensaActivity", "RestError");
         e.printStackTrace();
+    }
+
+    @Override
+    public void onRefresh() {
+        loadMeals();
     }
 }
