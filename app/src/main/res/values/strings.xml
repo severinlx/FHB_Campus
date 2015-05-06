@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">FHB Campus</string>
+    <string name="fhb_mensa">FHB Mensa</string>
     <string name="action_calendar">Plan</string>
     <string name="action_mensa">Mensa</string>
     <string name="hello_world">Wellcome!</string>

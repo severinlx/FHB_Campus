@@ -41,8 +41,8 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler, S
         getLayoutInflater().inflate(R.layout.activity_mensa_list, frameLayout);
 
         //Setting title and itemChecked
-        mDrawerList.setItemChecked(position, true);
-        setTitle(listArray[position]);
+        mDrawerList.setItemChecked(DrawerActivity.ACTIVITY_MENSA, true);
+        setTitle(R.string.action_mensa);
 
         // Get SwipeRefreshLayout object from xml
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);

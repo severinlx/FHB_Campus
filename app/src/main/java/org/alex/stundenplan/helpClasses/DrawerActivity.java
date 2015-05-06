@@ -36,6 +36,11 @@ import org.alex.stundenplan.stundenplan.PlanActivity;
  */
 public class DrawerActivity extends ActionBarActivity {
 
+    public static final int ACTIVITY_PLAN = 0;
+    public static final int ACTIVITY_MENSA = 1;
+    public static final int ACTIVITY_EVENT = 2;
+    public static final int ACTIVITY_LOGIN = 3;
+
     private static long back_pressed;
 
     private Toolbar toolbar;
@@ -179,23 +184,23 @@ public class DrawerActivity extends ActionBarActivity {
         Intent intent;
 
         switch (position) {
-            case 0:
+            case ACTIVITY_PLAN:
                 intent = new Intent(this, PlanActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 break;
-            case 1:
+            case ACTIVITY_MENSA:
                 MensaActivity_.intent(this).flags(Intent.FLAG_ACTIVITY_NO_ANIMATION).start();
 //                intent = new Intent(this, MensaActivity.class);
 //                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 //                startActivity(intent);
                 break;
-            case 2:
+            case ACTIVITY_EVENT:
                 intent =  new Intent(this, EventActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 break;
-            case 3:
+            case ACTIVITY_LOGIN:
                 intent = new Intent(this, LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
