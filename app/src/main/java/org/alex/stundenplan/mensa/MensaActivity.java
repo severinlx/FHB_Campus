@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 import org.alex.stundenplan.R;
@@ -24,7 +25,7 @@ import java.util.List;
 @EActivity
 public class MensaActivity extends DrawerActivity implements RestErrorHandler, SwipeRefreshLayout.OnRefreshListener {
 
-    private ListView listView;
+    private ExpandableListView listView;
     private MensaAdapter mensaAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
 
@@ -48,9 +49,9 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler, S
         swipeRefreshLayout.setOnRefreshListener(this);
 
         // Get ListView object from xml
-        listView = (ListView) findViewById(R.id.listViewMensa);
+        listView = (ExpandableListView) findViewById(R.id.listViewMensa);
 
-        mensaAdapter = new MensaAdapter();
+        mensaAdapter = new MensaAdapter(this);
         listView.setAdapter(mensaAdapter);
 
         loadMeals();
