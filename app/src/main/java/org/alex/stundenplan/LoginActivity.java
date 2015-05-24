@@ -86,7 +86,7 @@ public class LoginActivity extends DrawerActivity {
 
     }
 
-    
+
 
 
     public String fachSpinner() {

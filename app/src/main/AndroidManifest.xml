@@ -27,6 +27,11 @@
             android:name=".stundenplan.PlanActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
 
         <activity
@@ -48,7 +53,6 @@
         </activity>
 
         <activity android:name=".LoginActivity">
-
         </activity>
 
 
@@ -57,11 +61,6 @@
             android:configChanges="orientation"
             android:label="@string/fhb_mensa"
             android:noHistory="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
         </activity>
 
         <receiver android:name=".mensa.MensaWidget" android:label="@string/fhb_mensa">
