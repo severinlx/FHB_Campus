@@ -86,13 +86,7 @@ public class LoginActivity extends DrawerActivity {
 
     }
 
-    public void onBackPressed() {
-
-        Intent myIntent = new Intent(this, PlanActivity.class);
-
-        this.startActivity(myIntent);
-
-    }
+    
 
 
     public String fachSpinner() {

@@ -20,7 +20,9 @@
 
     <style name="FHB_TextAppearance_Mensa_Group">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/mensa_meal_tab_color_0</item>
+        <item name="android:textColor">@color/mensa_date</item>
+        <item name="android:paddingLeft">10dp</item>
+
     </style>
 
 

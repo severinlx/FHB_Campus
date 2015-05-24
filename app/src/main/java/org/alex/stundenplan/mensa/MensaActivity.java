@@ -82,7 +82,7 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler, S
 
         Log.d("MensaActivity", "update Meals");
         mensaAdapter.updateData(result);
-        swipeRefreshLayout.setRefreshing(false);
+//        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override

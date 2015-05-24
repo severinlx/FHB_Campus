@@ -59,14 +59,16 @@ public class MensaGroupView extends CheckedTextView {
 
     @AfterInject
     void setupView(){
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
-//        {
-//            this.setTextAlignment(TEXT_ALIGNMENT_TEXT_END);
-//        }
-//
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,layoutHeight);
-        params.setMargins(marginLeft,0,0,0);
-        this.setLayoutParams(params);
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
+        {
+            this.setTextAlignment(TEXT_ALIGNMENT_TEXT_END);
+        }
+
+        //i commented out this lines because they cause a bug on android 4.4 and app crash
+
+       //LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,layoutHeight);
+       // params.setMargins(marginLeft,0,0,0);
+      //  this.setLayoutParams(params);
 
         this.setTextAppearance(getContext(), R.style.FHB_TextAppearance_Mensa_Group);
         this.setPadding(paddingLeft,paddingTop,0,0);

@@ -5,11 +5,11 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_item_font_size">14sp</dimen>
 
-    <dimen name="mensa_group_padding_left">200dp</dimen>
+    <dimen name="mensa_group_padding_left">50dp</dimen>
     <dimen name="mensa_group_padding_top">16dp</dimen>
     <dimen name="mensa_group_margin_left">2dp</dimen>
     <dimen name="listPreferredItemHeight">38dp</dimen>
 
     <dimen name="mensa_meal_tab_height">80dp</dimen>
-    <dimen name="mensa_meal_tab_width">40dp</dimen>
+    <dimen name="mensa_meal_tab_width">30dp</dimen>
 </resources>

@@ -5,14 +5,17 @@
     android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f8f8ff">
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:background="@color/white">
 
     <ExpandableListView
         android:id="@+id/listViewMensa"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="1dp"
+        android:layout_height="40dp"
+        android:dividerHeight="40dp"
         android:divider="@drawable/mensa_divider"
+        android:childDivider="@color/white"
        >
     </ExpandableListView>
 

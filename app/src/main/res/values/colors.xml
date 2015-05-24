@@ -24,6 +24,10 @@
     <color name="mensa_meal_tab_color_3">#d50000</color>
     <color name="mensa_meal_tab_color_4">#ffCC0A2F</color>
 
+    <color name="mensa_date">#5E5E5E</color>
+    <color name="mensa_date_divider">#f8f8ff</color>
+
+
 
 
 

@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.alex.stundenplan.LoginActivity;
 import org.alex.stundenplan.R;
@@ -41,7 +42,9 @@ public class DrawerActivity extends ActionBarActivity {
     public static final int ACTIVITY_EVENT = 2;
     public static final int ACTIVITY_LOGIN = 3;
 
-    private static long back_pressed;
+    private static long backPressedTime = 0;    // used by onBackPressed()
+
+
 
     private Toolbar toolbar;
 
@@ -262,6 +265,7 @@ public class DrawerActivity extends ActionBarActivity {
     /* We can override onBackPressed method to toggle navigation drawer*/
     @Override
     public void onBackPressed() {
+        long t = System.currentTimeMillis();
 
         if(mDrawerLayout.isDrawerOpen(mDrawerList)){
             mDrawerLayout.closeDrawer(mDrawerList);
@@ -269,7 +273,16 @@ public class DrawerActivity extends ActionBarActivity {
          else if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         } else {
-            super.onBackPressed();
+            //ask for exit
+            if (t - backPressedTime > 2000) {    // 2 secs
+                backPressedTime = t;
+                Toast.makeText(this, "Press back again to logout",
+                        Toast.LENGTH_SHORT).show();
+            } else {    // this guy is serious
+                // clean up
+                super.onBackPressed();       // bye
+
+        }
         }
 
     }
