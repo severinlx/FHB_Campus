@@ -51,7 +51,6 @@ public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSO
             try {
                 String season = LoginActivity.getActualSeason();
                 String json = combinationEndpoint.getCombination(season).execute().getFachs();
-                System.out.println("json "+json);
                 JSONParser jsonParser = new JSONParser();
 
                 fachs = (JSONObject) jsonParser.parse(json);

@@ -11,6 +11,12 @@ public class MensaDay {
     private String date;
     private List<String> meals;
 
+    public String getDateString() {
+        return dateString;
+    }
+
+    private String dateString;
+
     public String getDate(){
         return date;
     }

@@ -74,15 +74,26 @@ public class DrawerActivity extends ActionBarActivity {
      * */
     private static boolean isLaunch = true;
 
+
+
     /**
      *  Base layout node of this Activity.
      * */
     private DrawerLayout mDrawerLayout;
 
+
     /**
      * Drawer listner class for drawer open, close etc.
      */
     private ActionBarDrawerToggle actionBarDrawerToggle;
+
+    public DrawerLayout getmDrawerLayout() {
+        return mDrawerLayout;
+    }
+
+    public void setmDrawerLayout(DrawerLayout mDrawerLayout) {
+        this.mDrawerLayout = mDrawerLayout;
+    }
 
 
     @Override

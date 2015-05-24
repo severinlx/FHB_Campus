@@ -58,7 +58,6 @@ public class Day {
 		
 		
 		public static String fineDate(String date){
-            System.out.println(date);
 
             if(date.length()<7){
 

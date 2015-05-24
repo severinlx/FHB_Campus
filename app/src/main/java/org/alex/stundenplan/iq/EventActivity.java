@@ -77,13 +77,6 @@ public class EventActivity extends DrawerActivity  {
         new updateEventList(eventsAdapter).execute();
     }
 
-    public void onBackPressed() {
-
-        Intent myIntent = new Intent(this, PlanActivity.class);
-
-        this.startActivity(myIntent);
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

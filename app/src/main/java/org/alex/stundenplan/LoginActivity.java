@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import org.alex.stundenplan.cloud.LoginCombination_Endpoint_Task;
 import org.alex.stundenplan.helpClasses.CacheManager;
+import org.alex.stundenplan.helpClasses.DrawerActivity;
 import org.alex.stundenplan.stundenplan.PlanActivity;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,11 +28,11 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by alexandru on 17.03.15.
  */
+public class LoginActivity extends DrawerActivity {
 
 
-public class LoginActivity extends Activity{
 
-
+    private static final String TAG = LoginActivity.class.getSimpleName();
 
 
     String fachPreference;
@@ -62,6 +65,12 @@ public class LoginActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        //Adding our layout to parent class frame layout.
+        getLayoutInflater().inflate(R.layout.activity_login, frameLayout);
+
+        //Setting title and itemChecked
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         context = this;
 
@@ -71,7 +80,7 @@ public class LoginActivity extends Activity{
 
         checkSeason();//check season and if to old clear the data
 
-        setContentView(R.layout.activity_login);
+        //setContentView(R.layout.activity_login);
 
         fachSpinner();
 
@@ -79,9 +88,9 @@ public class LoginActivity extends Activity{
 
     public void onBackPressed() {
 
-            Intent myIntent = new Intent(this, PlanActivity.class);
+        Intent myIntent = new Intent(this, PlanActivity.class);
 
-            this.startActivity(myIntent);
+        this.startActivity(myIntent);
 
     }
 
@@ -225,7 +234,7 @@ public class LoginActivity extends Activity{
 
     public void checkSeason(){
 
-    //check if activity_login Pref aktuell
+        //check if activity_login Pref aktuell
 
         String actualSeason = null;
 
@@ -238,7 +247,7 @@ public class LoginActivity extends Activity{
             e.printStackTrace();
         }
 
-         //clear all Data if not from this semester:
+        //clear all Data if not from this semester:
         if (sharedPref.getString("season", "noseason") != actualSeason) {
 
             editor.clear();
@@ -275,8 +284,8 @@ public class LoginActivity extends Activity{
 
         }
 
-       //If not, do this:
-       //proof connection
+        //If not, do this:
+        //proof connection
 
         ConnectivityManager connMgr = (ConnectivityManager)
 
@@ -453,8 +462,8 @@ public class LoginActivity extends Activity{
 
             editor.commit();
 
-         //todo: in cache manager check cache for the precise url.. so you dont have to delete it now
-         //delete cache, because SubjectsList.class ist looking if there is cache when retreiving the subjects list
+            //todo: in cache manager check cache for the precise url.. so you dont have to delete it now
+            //delete cache, because SubjectsList.class ist looking if there is cache when retreiving the subjects list
 
             cacheManager.clear();
 

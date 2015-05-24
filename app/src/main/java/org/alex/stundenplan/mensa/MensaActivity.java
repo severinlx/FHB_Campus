@@ -25,6 +25,14 @@ import java.util.List;
 @EActivity
 public class MensaActivity extends DrawerActivity implements RestErrorHandler, SwipeRefreshLayout.OnRefreshListener {
 
+    public ExpandableListView getListView() {
+        return listView;
+    }
+
+    public void setListView(ExpandableListView listView) {
+        this.listView = listView;
+    }
+
     private ExpandableListView listView;
     private MensaAdapter mensaAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -53,18 +61,11 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler, S
 
         mensaAdapter = new MensaAdapter(this);
         listView.setAdapter(mensaAdapter);
-
         loadMeals();
 
     }
 
-    public void onBackPressed() {
 
-        Intent myIntent = new Intent(this, PlanActivity.class);
-
-        this.startActivity(myIntent);
-
-    }
 
     @Background
     protected void loadMeals() {
@@ -78,6 +79,7 @@ public class MensaActivity extends DrawerActivity implements RestErrorHandler, S
 
     @UiThread
     protected void updateMeals(List<MensaDay> result) {
+
         Log.d("MensaActivity", "update Meals");
         mensaAdapter.updateData(result);
         swipeRefreshLayout.setRefreshing(false);

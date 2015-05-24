@@ -18,6 +18,15 @@
     <color name="accent">#ffd8d8d8</color>
     <color name="nav_item_pressed">#cccccc</color>
 
+    <color name="mensa_meal_tab_color_0">#ff8a80</color>
+    <color name="mensa_meal_tab_color_1">#ff5252</color>
+    <color name="mensa_meal_tab_color_2">#ff1744</color>
+    <color name="mensa_meal_tab_color_3">#d50000</color>
+    <color name="mensa_meal_tab_color_4">#ffCC0A2F</color>
+
+
+
+
     <integer-array name="androidcolors">
         <item>@color/blue</item>
         <item>@color/purple</item>

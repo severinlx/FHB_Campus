@@ -27,6 +27,7 @@ import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
@@ -60,9 +61,20 @@ public class EventDetailActivity extends DrawerActivity {
         mTxtDescription = (TextView) findViewById(R.id.event_detail_description);
     }
 
+
     public void onBackPressed() {
-        Intent myIntent = new Intent(this, EventActivity.class);
-        this.startActivity(myIntent);
+
+        DrawerLayout mDrawerLayout = this.getmDrawerLayout();
+        if(mDrawerLayout.isDrawerOpen(mDrawerList)){
+            mDrawerLayout.closeDrawer(mDrawerList);
+        }
+        else if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            Intent myIntent = new Intent(this, EventActivity.class);
+            this.startActivity(myIntent);
+        }
+
     }
     private class getQRCode extends AsyncTask<String, Void, Bitmap> {
         ImageView bmpImage;

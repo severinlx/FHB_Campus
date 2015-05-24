@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.alex.stundenplan.R;
 import org.alex.stundenplan.data.MensaDay;
+import org.alex.stundenplan.helpClasses.Day;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.ViewsById;
@@ -43,7 +44,7 @@ public class MensaItemView extends RelativeLayout {
         final List<String> meals = data.getMeals();
         final int mealsCount = meals.size();
 
-        mensaDate.setText(data.getDate());
+        mensaDate.setText(Day.fineDate(data.getDate()));
 
         for(int i = 0; i < mensaMealsCount; i++){
             final String meal = (i >= mealsCount)?"":meals.get(i);
