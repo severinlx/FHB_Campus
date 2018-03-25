@@ -4,6 +4,8 @@ package org.alex.stundenplan.cloud;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
+
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
@@ -49,8 +51,16 @@ public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSO
 
 
             try {
-                String season = LoginActivity.getActualSeason();
+                String season = 
+                        LoginActivity.getActualSeason();
+                Log.d("what season it", season);
+
+                //the call to provide from clod all the data
+
                 String json = combinationEndpoint.getCombination(season).execute().getFachs();
+
+                Log.d("json from endpoint", json);
+
                 JSONParser jsonParser = new JSONParser();
 
                 fachs = (JSONObject) jsonParser.parse(json);
@@ -63,8 +73,8 @@ public class LoginCombination_Endpoint_Task extends AsyncTask<Context, Void, JSO
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (java.text.ParseException e) {
-                e.printStackTrace();
+           } catch (java.text.ParseException e) {
+               e.printStackTrace();
             }
 
 

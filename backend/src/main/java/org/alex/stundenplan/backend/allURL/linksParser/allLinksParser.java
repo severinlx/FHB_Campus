@@ -1,8 +1,9 @@
 package org.alex.stundenplan.backend.allURL.linksParser;
 
-import com.google.appengine.repackaged.com.google.common.base.Pair;
+
 
 import org.alex.stundenplan.backend.allURL.OneLink;
+import org.alex.stundenplan.backend.helpclasses.Pair;
 import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -39,10 +40,11 @@ public class allLinksParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        /*
 		if (!doc.hasText()) {
 			System.out.println("error!!!! kein Text!!!");
 		}
-
+          */
         //-----------------------Function:-----------------------------
 
 		Elements a = doc.getElementsByTag("a");

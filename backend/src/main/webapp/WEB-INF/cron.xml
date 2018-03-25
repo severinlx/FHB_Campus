@@ -5,5 +5,10 @@
         <description>insert plan in database every 6 hour</description>
         <schedule>every 6 hours</schedule>
     </cron>
+    <cron>
+        <url>/cron/urlsUpdate</url>
+        <description>update mainUrl on 1 march and 1 of september each year</description>
+        <schedule>1, 2, 3 of march, september 00:00</schedule>
+    </cron>
 
 </cronentries>

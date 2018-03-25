@@ -25,14 +25,16 @@ public class CronParser extends HttpServlet{
 
     public void  cronParse(){
 
+
+
         boolean parsed = false;
         ArrayList<OneLink> linksList = new ArrayList<>();
         ParserEndpoint parser =new ParserEndpoint();
         JSONObject fachs = new JSONObject();
 
-        String mainUrl = "http://informatik.fh-brandenburg.de/Stundenplan/ss15/liste-zu.html";
+        String mainUrl = "http://informatik.fh-brandenburg.de/Stundenplan/ss16/liste-zu.html";
 
-        String season = "ss15";
+        String season = "ss16";
 
         //1. get List of links:
 

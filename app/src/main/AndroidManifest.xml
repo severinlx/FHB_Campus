@@ -19,7 +19,11 @@
             android:name=".WelcomeActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
 
         </activity>
 
@@ -27,11 +31,7 @@
             android:name=".stundenplan.PlanActivity"
             android:configChanges="orientation"
             android:noHistory="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+
         </activity>
 
         <activity

@@ -27,7 +27,7 @@ public class Stundenplan_Adapter extends BaseAdapter {
     List<ESubject> subjectList = new ArrayList<>();
     SubjectsList list;
 
-	// -------------------------------Constructor becomes the list-------------
+	// -------------------------------Constructor get the list-------------
 	public Stundenplan_Adapter(Context context){
         this.context = context;
 

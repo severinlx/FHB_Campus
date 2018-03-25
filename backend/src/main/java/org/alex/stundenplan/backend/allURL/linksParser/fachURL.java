@@ -2,8 +2,9 @@ package org.alex.stundenplan.backend.allURL.linksParser;
 
 
 
-import com.google.appengine.repackaged.com.google.common.base.Pair;
+;
 
+import org.alex.stundenplan.backend.helpclasses.Pair;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.alex.stundenplan.backend.allURL.OneLink;
